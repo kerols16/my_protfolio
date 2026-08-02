@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mobile App Developer - Kerols Hany</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-fixed": "#141c2a",
+                "tertiary-container": "#0d1422",
+                "surface-container": "#1e1f25",
+                "on-tertiary-fixed-variant": "#404757",
+                "tertiary-fixed-dim": "#c0c6da",
+                "surface-container-lowest": "#0c0e13",
+                "on-error-container": "#ffdad6",
+                "on-primary": "#2c303a",
+                "inverse-surface": "#e2e2e9",
+                "outline-variant": "#45464b",
+                "secondary-container": "#464a4b",
+                "primary-fixed-dim": "#c3c6d3",
+                "on-secondary-container": "#b6b9bb",
+                "on-primary-fixed": "#181c25",
+                "secondary-fixed-dim": "#c4c7c9",
+                "outline": "#909096",
+                "on-secondary-fixed-variant": "#444749",
+                "on-primary-container": "#7b7e8a",
+                "surface-container-high": "#282a30",
+                "surface-tint": "#c3c6d3",
+                "primary": "#c3c6d3",
+                "error-container": "#93000a",
+                "inverse-on-surface": "#2e3036",
+                "on-background": "#e2e2e9",
+                "background": "#111319",
+                "secondary": "#c4c7c9",
+                "surface-container-highest": "#33353a",
+                "primary-fixed": "#dfe2ef",
+                "surface-container-low": "#191b21",
+                "tertiary": "#c0c6da",
+                "on-tertiary-container": "#787e90",
+                "inverse-primary": "#5a5e69",
+                "on-secondary": "#2d3133",
+                "on-surface-variant": "#c6c6cc",
+                "on-tertiary": "#293040",
+                "primary-container": "#10141d",
+                "error": "#ffb4ab",
+                "surface": "#111319",
+                "on-error": "#690005",
+                "surface-bright": "#37393f",
+                "on-surface": "#e2e2e9",
+                "surface-variant": "#33353a",
+                "surface-dim": "#111319",
+                "tertiary-fixed": "#dce2f6",
+                "on-primary-fixed-variant": "#434751",
+                "secondary-fixed": "#e0e3e5",
+                "on-secondary-fixed": "#191c1e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "20px",
+                "gutter": "24px",
+                "base": "8px",
+                "margin-desktop": "64px",
+                "container-max": "1440px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Geist"
+                ],
+                "body-md": [
+                        "Geist"
+                ],
+                "display-lg": [
+                        "Geist"
+                ],
+                "label-sm": [
+                        "JetBrains Mono"
+                ],
+                "headline-lg-mobile": [
+                        "Geist"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "56px",
+                        {
+                                "lineHeight": "64px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .glass-panel {
+            background: rgba(25, 27, 33, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glow-effect {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(195, 198, 211, 0.1) 0%, rgba(17, 19, 25, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        /* Nav link active state logic */
+        .side-nav-link.active {
+            color: #c3c6d3;
+            border-left-color: #c3c6d3;
+            background: rgba(195, 198, 211, 0.05);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen smooth-scroll relative overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 max-w-container-max mx-auto bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+<div class="font-display-lg text-headline-lg font-bold text-on-surface dark:text-on-surface">Kerols.dev</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Skills</a>
+<a class="font-label-sm text-label-sm text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary hover:text-primary transition-colors duration-300" href="#">Projects</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Certificates</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="hidden lg:flex font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300 flex items-center justify-center p-2 rounded-full hover:bg-white/5" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">code</span>
+</a>
+<a class="hidden lg:flex font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300 flex items-center justify-center p-2 rounded-full hover:bg-white/5" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">terminal</span>
+</a>
+<a class="font-label-sm text-label-sm text-on-primary bg-primary hover:bg-primary-fixed-dim px-4 py-2 rounded-lg transition-colors duration-300 ml-4 shadow-[0_0_20px_rgba(195,198,211,0.1)]" href="#">Download CV</a>
+</div>
+</header>
+<!-- Main Layout Grid -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-8 pt-[120px] pb-32 grid grid-cols-1 lg:grid-cols-12 gap-gutter relative">
+<!-- Background Glow -->
+<div class="glow-effect top-0 left-[20%]"></div>
+<div class="glow-effect top-[40%] right-[10%]" style="background: radial-gradient(circle, rgba(196, 199, 201, 0.05) 0%, rgba(17, 19, 25, 0) 70%);"></div>
+<!-- Sticky Side Nav -->
+<aside class="hidden lg:block lg:col-span-3">
+<div class="sticky top-[120px] glass-panel rounded-xl p-6">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-6">Case Study Contents</h3>
+<nav class="flex flex-col gap-2">
+<a class="side-nav-link active block py-2 px-4 border-l-2 border-transparent text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md text-body-md rounded-r" href="#overview">Overview</a>
+<a class="side-nav-link block py-2 px-4 border-l-2 border-transparent text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md text-body-md rounded-r" href="#problem-solution">Problem &amp; Solution</a>
+<a class="side-nav-link block py-2 px-4 border-l-2 border-transparent text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md text-body-md rounded-r" href="#architecture">Architecture</a>
+<a class="side-nav-link block py-2 px-4 border-l-2 border-transparent text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md text-body-md rounded-r" href="#features">Key Features</a>
+<a class="side-nav-link block py-2 px-4 border-l-2 border-transparent text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md text-body-md rounded-r" href="#gallery">Gallery</a>
+<a class="side-nav-link block py-2 px-4 border-l-2 border-transparent text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md text-body-md rounded-r" href="#lessons">Lessons Learned</a>
+</nav>
+</div>
+</aside>
+<!-- Content Area -->
+<div class="lg:col-span-9 flex flex-col gap-32">
+<!-- Hero Section -->
+<section class="flex flex-col gap-8" id="hero">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-2">
+<span class="font-label-sm text-label-sm px-3 py-1 bg-white/5 border border-white/10 rounded-full text-secondary">Flutter</span>
+<span class="font-label-sm text-label-sm px-3 py-1 bg-white/5 border border-white/10 rounded-full text-primary">Dart</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-surface">FinTech Wallet App</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-4">A high-performance, secure digital wallet application built with Flutter, focusing on seamless transactions and intuitive financial management.</p>
+</div>
+<div class="flex gap-4">
+<a class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:bg-primary-fixed-dim transition-colors shadow-[0_0_20px_rgba(195,198,211,0.1)]" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">open_in_new</span>
+                        Live App
+                    </a>
+<a class="flex items-center gap-2 px-6 py-3 border border-white/10 text-on-surface rounded-lg font-label-sm text-label-sm hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">code</span>
+                        View Source
+                    </a>
+</div>
+<div class="w-full h-[400px] md:h-[600px] glass-panel rounded-xl overflow-hidden mt-8 relative group border border-outline/20">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-700" data-alt="A sleek, high-end presentation mockup of a mobile FinTech application displayed on modern smartphones. The interface features dark mode styling with teal and vibrant blue accents. The scene is lit with soft, premium studio lighting against a dark navy background, highlighting the glossy screens." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDt3Fbg-UYiaub0VPPj_WSBMEcJ_PIAWOmoGMP4eNV6lid0AjHtMVwpcRnqjFaZPhQEan1ajNbi5rBBqpFKrcKdDxCxOh09UjyadJImICV2ia1GA9Kx-N35XzskMKLab4TIXv0hAbiGs9S6ZKCPLxOJJCPO-bdhZiWKyjovt6YwckF7qzQ_4xswm_fK2mYOkRqACDG1BzOmnLCTZAc2DNFYG1y6Qhnd5I2cz_ftHeHwCMLuWI32MCWZLCrZlMVvsbAGipUo1cf5wD1')"></div>
+</div>
+</section>
+<!-- Overview -->
+<section class="flex flex-col gap-4 pt-8" id="overview">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+                    Overview
+                </h2>
+<div class="glass-panel p-8 rounded-xl border border-outline/20 bg-surface-container">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        This project represents a complete reimagining of the personal finance experience. Built to handle complex transactional data in real-time, the application leverages Flutter's high-performance rendering engine to deliver smooth, 60fps animations even when parsing extensive transaction histories. The core objective was to create a digital wallet that feels as responsive and secure as a native banking application while maintaining a unified codebase across iOS and Android platforms.
+                    </p>
+</div>
+</section>
+<!-- Problem & Solution -->
+<section class="grid md:grid-cols-2 gap-gutter pt-8" id="problem-solution">
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-2 border-t-2 border-t-error/50 border border-outline/20 bg-surface-container">
+<h3 class="font-headline-lg-mobile text-[24px] text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-error">warning</span>
+                        The Problem
+                    </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Existing financial apps often suffer from bloated, slow interfaces and state management that becomes unwieldy as transaction volume grows. Users reported frustration with lagging dashboards and unclear data representations during peak usage periods.
+                    </p>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-2 border-t-2 border-t-secondary/50 border border-outline/20 bg-surface-container">
+<h3 class="font-headline-lg-mobile text-[24px] text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">lightbulb</span>
+                        The Solution
+                    </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        By implementing a strict Clean Architecture pattern and utilizing Bloc for predictable state management, we isolated the UI from business logic. This allowed for aggressive caching strategies and optimized rendering, resulting in a 40% reduction in time-to-interactive on launch.
+                    </p>
+</div>
+</section>
+<!-- Architecture -->
+<section class="flex flex-col gap-4 pt-8" id="architecture">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">architecture</span>
+                    Architecture &amp; Tech Stack
+                </h2>
+<div class="grid md:grid-cols-3 gap-gutter">
+<div class="glass-panel p-6 rounded-xl border border-outline/20 bg-surface-container flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">layers</span>
+</div>
+<h4 class="font-headline-lg-mobile text-[20px] text-on-surface">Clean Architecture</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Strict separation of concerns across Presentation, Domain, and Data layers for maximum maintainability.</p>
+</div>
+<div class="glass-panel p-6 rounded-xl border border-outline/20 bg-surface-container flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">account_tree</span>
+</div>
+<h4 class="font-headline-lg-mobile text-[20px] text-on-surface">BLoC Pattern</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Predictable state management using flutter_bloc to handle complex asynchronous data flows seamlessly.</p>
+</div>
+<div class="glass-panel p-6 rounded-xl border border-outline/20 bg-surface-container flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">database</span>
+</div>
+<h4 class="font-headline-lg-mobile text-[20px] text-on-surface">Local First</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Robust offline-first architecture utilizing Hive for rapid local caching of transaction data.</p>
+</div>
+</div>
+</section>
+<!-- Key Features -->
+<section class="flex flex-col gap-4 pt-8" id="features">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">featured_play_list</span>
+                    Key Features
+                </h2>
+<div class="glass-panel p-8 rounded-xl border border-outline/20 bg-surface-container">
+<ul class="flex flex-col gap-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<h4 class="font-headline-lg-mobile text-[20px] text-on-surface mb-2">Real-time Transaction Parsing</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Instantly processes and categorizes incoming transactions using custom regex engines optimized for mobile.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<h4 class="font-headline-lg-mobile text-[20px] text-on-surface mb-2">Biometric Security Integration</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Seamless integration with iOS FaceID and Android BiometricPrompt for frictionless yet highly secure authentication.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<h4 class="font-headline-lg-mobile text-[20px] text-on-surface mb-2">Dynamic Data Visualization</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Interactive, 60fps charts built with customized painter classes in Flutter to represent spending habits fluidly.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="glass-panel p-12 rounded-xl text-center relative overflow-hidden mt-16 flex flex-col items-center gap-8 border-primary/20 bg-surface-container">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 pointer-events-none"></div>
+<h2 class="font-display-lg text-headline-lg md:text-headline-lg text-on-surface z-10">Ready to build something similar?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl z-10">Let's discuss how we can engineer a high-performance application for your next project.</p>
+<a class="px-8 py-4 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:bg-primary-fixed-dim transition-colors shadow-[0_0_30px_rgba(195,198,211,0.15)] z-10" href="#">
+                    Start a Conversation
+                </a>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-4 bg-surface dark:bg-surface border-t border-white/5 transition-all duration-300">
+<div class="font-display-lg text-body-md font-bold text-on-surface">Kerols.dev</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Kerols Hany. Mobile App Developer.</p>
+<nav class="flex items-center gap-gutter">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Github</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Twitter</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Back to Top</a>
+</nav>
+</footer>
+<script>
+        // Simple scroll spy for side navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.side-nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -60% 0px',
+                threshold: 0
+            };
+
+            const observerCallback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            sections.forEach(sec => observer.observe(sec));
+        });
+    </script>
+</body></html>

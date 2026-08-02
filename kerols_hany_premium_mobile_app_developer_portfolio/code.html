@@ -1,0 +1,415 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Kerols Hany | Mobile App Developer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-fixed": "#141c2a",
+                "tertiary-container": "#0d1422",
+                "surface-container": "#1e1f25",
+                "on-tertiary-fixed-variant": "#404757",
+                "tertiary-fixed-dim": "#c0c6da",
+                "surface-container-lowest": "#0c0e13",
+                "on-error-container": "#ffdad6",
+                "on-primary": "#2c303a",
+                "inverse-surface": "#e2e2e9",
+                "outline-variant": "#45464b",
+                "secondary-container": "#464a4b",
+                "primary-fixed-dim": "#c3c6d3",
+                "on-secondary-container": "#b6b9bb",
+                "on-primary-fixed": "#181c25",
+                "secondary-fixed-dim": "#c4c7c9",
+                "outline": "#909096",
+                "on-secondary-fixed-variant": "#444749",
+                "on-primary-container": "#7b7e8a",
+                "surface-container-high": "#282a30",
+                "surface-tint": "#c3c6d3",
+                "primary": "#c3c6d3",
+                "error-container": "#93000a",
+                "inverse-on-surface": "#2e3036",
+                "on-background": "#e2e2e9",
+                "background": "#111319",
+                "secondary": "#c4c7c9",
+                "surface-container-highest": "#33353a",
+                "primary-fixed": "#dfe2ef",
+                "surface-container-low": "#191b21",
+                "tertiary": "#c0c6da",
+                "on-tertiary-container": "#787e90",
+                "inverse-primary": "#5a5e69",
+                "on-secondary": "#2d3133",
+                "on-surface-variant": "#c6c6cc",
+                "on-tertiary": "#293040",
+                "primary-container": "#10141d",
+                "error": "#ffb4ab",
+                "surface": "#111319",
+                "on-error": "#690005",
+                "surface-bright": "#37393f",
+                "on-surface": "#e2e2e9",
+                "surface-variant": "#33353a",
+                "surface-dim": "#111319",
+                "tertiary-fixed": "#dce2f6",
+                "on-primary-fixed-variant": "#434751",
+                "secondary-fixed": "#e0e3e5",
+                "on-secondary-fixed": "#191c1e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "20px",
+                "gutter": "24px",
+                "base": "8px",
+                "margin-desktop": "64px",
+                "container-max": "1440px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Geist"
+                ],
+                "body-md": [
+                        "Geist"
+                ],
+                "display-lg": [
+                        "Geist"
+                ],
+                "label-sm": [
+                        "JetBrains Mono"
+                ],
+                "headline-lg-mobile": [
+                        "Geist"
+                ],
+                "sans": ["Geist", "sans-serif"],
+                "mono": ["JetBrains Mono", "monospace"]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "56px",
+                        {
+                                "lineHeight": "64px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style data-purpose="custom-styles">
+    body {
+      background-color: theme('colors.background');
+      color: theme('colors.on-background');
+      font-family: 'Geist', sans-serif;
+    }
+    
+    .hero-bg-text {
+      font-size: 18vw;
+      line-height: 0.8;
+      font-weight: 900;
+      color: theme('colors.surface-container-highest');
+      text-transform: uppercase;
+      white-space: nowrap;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      letter-spacing: -0.05em;
+    }
+    
+    .hero-image-wrapper {
+      position: relative;
+      z-index: 10;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    
+    .hero-image {
+      max-height: 100%;
+      object-fit: cover;
+      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+    }
+
+    .glass-card {
+      background: rgba(30, 31, 37, 0.4);
+      backdrop-filter: blur(12px);
+      border: 1px solid theme('colors.outline-variant');
+      border-radius: theme('borderRadius.xl');
+    }
+    
+    .glow-hover:hover {
+      box-shadow: 0 0 20px rgba(195, 198, 211, 0.1);
+      border-color: theme('colors.primary');
+    }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-primary/30 selection:text-primary">
+<!-- BEGIN: Header -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant px-6 py-4 flex justify-between items-center">
+<div class="text-xl font-bold tracking-tight text-on-background">Kerols.dev</div>
+<nav class="hidden md:flex space-x-8 text-sm font-medium text-on-surface-variant font-mono">
+<a class="text-primary border-b-2 border-primary pb-1" href="#home">Home</a>
+<a class="hover:text-primary transition-colors pb-1" href="#skills">Skills</a>
+<a class="hover:text-primary transition-colors pb-1" href="#projects">Projects</a>
+<a class="hover:text-primary transition-colors pb-1" href="#certificates">Certificates</a>
+<a class="hover:text-primary transition-colors pb-1" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="px-4 py-2 text-sm font-mono font-medium border border-outline-variant rounded-md hover:bg-surface-container hover:text-primary transition-colors">
+        Download CV
+      </button>
+<div class="flex space-x-2 text-on-surface-variant hidden sm:flex">
+<a class="hover:text-primary transition-colors" href="#">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+</a>
+<a class="hover:text-primary transition-colors" href="#">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+</a>
+</div>
+</div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Main Content -->
+<main class="flex-grow pt-24 pb-16 overflow-hidden relative">
+<!-- BEGIN: Hero Section -->
+<section class="relative w-full h-[80vh] min-h-[600px] flex flex-col justify-center items-center px-8 md:px-16 overflow-hidden" id="home">
+<!-- Background Large Text -->
+<div class="hero-bg-text select-none pointer-events-none opacity-50">
+        MOBILE APP<br>DEVELOPER
+      </div>
+<!-- Top Left Text -->
+<div class="absolute top-12 left-8 md:left-16 z-20">
+<h2 class="text-3xl md:text-5xl font-bold uppercase tracking-wider text-on-surface-variant" style="opacity: 0;">KEROLS HANY</h2>
+</div>
+<!-- Top Right Text -->
+
+<!-- Center Image -->
+<div class="hero-image-wrapper w-full max-w-2xl mt-12 md:mt-24">
+<img alt="Kerols Hany - Mobile App Developer" class="hero-image object-contain object-bottom w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvga6D91et18JpZF0xFlZu3tDxAJ3g-3pN7J0iOO-c281tGQlT6V5kSWxmHw5YFqbQXRvBvZ0Gt0Im9nznLU6Lv4heiOSTuwtHcwI0GkULpt8m352jTxjUqa0Frb8hmpeDDTM3TiiQakVw7KufAQUofwcMx8q0WlB7gkIiRc8kDzjp5iHtLpljCB0mgtj6K0hY_j-8JxjnbUUQUmvtEoGly0tkD-z3EWK8JsuvCYWIIzxjHegSGPb8Pl0zNEjiYJEnmCAW5y08uXce">
+</div>
+<!-- Bottom Left Text -->
+<div class="absolute bottom-12 left-8 md:left-16 z-20 max-w-sm glass-card p-4">
+<p class="text-sm md:text-base text-on-surface-variant leading-relaxed font-mono">
+          Crafting high-performance, scalable mobile applications. Specializing in Clean Architecture, Bloc state management, and delivering pixel-perfect UIs that feel native on both iOS and Android.
+        </p>
+</div>
+<!-- Bottom Right Text -->
+<div class="absolute bottom-12 right-8 md:right-16 z-20 max-w-sm text-right glass-card p-4">
+<p class="text-sm md:text-base text-on-surface-variant leading-relaxed font-mono">
+          I am a Computer Science student deeply passionate about mobile development and software architecture. My journey started with native Android, but finding Flutter felt like unlocking a superpower to build beautiful apps for any screen.
+        </p>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Skills Section -->
+<section class="py-24 px-8 md:px-16 max-w-7xl mx-auto" id="skills">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold uppercase tracking-wider text-on-surface mb-4">Technical Arsenal</h2>
+<p class="text-on-surface-variant font-mono max-w-2xl mx-auto">Tools and technologies I use to bring mobile experiences to life.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+<!-- Skill Badges -->
+<div class="glass-card px-6 py-3 flex items-center space-x-3 glow-hover transition-all cursor-default">
+<div class="w-2 h-2 rounded-full bg-[#54C5F8]"></div>
+<span class="font-mono font-medium text-on-surface">Flutter</span>
+</div>
+<div class="glass-card px-6 py-3 flex items-center space-x-3 glow-hover transition-all cursor-default">
+<div class="w-2 h-2 rounded-full bg-[#0175C2]"></div>
+<span class="font-mono font-medium text-on-surface">Dart</span>
+</div>
+<div class="glass-card px-6 py-3 flex items-center space-x-3 glow-hover transition-all cursor-default">
+<div class="w-2 h-2 rounded-full bg-[#FFCA28]"></div>
+<span class="font-mono font-medium text-on-surface">Firebase</span>
+</div>
+<div class="glass-card px-6 py-3 flex items-center space-x-3 glow-hover transition-all cursor-default">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-mono font-medium text-on-surface">Clean Architecture</span>
+</div>
+<div class="glass-card px-6 py-3 flex items-center space-x-3 glow-hover transition-all cursor-default">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="font-mono font-medium text-on-surface">Bloc/Cubit</span>
+</div>
+<div class="glass-card px-6 py-3 flex items-center space-x-3 glow-hover transition-all cursor-default">
+<div class="w-2 h-2 rounded-full bg-[#F05032]"></div>
+<span class="font-mono font-medium text-on-surface">Git</span>
+</div>
+<div class="glass-card px-6 py-3 flex items-center space-x-3 glow-hover transition-all cursor-default">
+<div class="w-2 h-2 rounded-full bg-[#3DDC84]"></div>
+<span class="font-mono font-medium text-on-surface">Android (Native)</span>
+</div>
+<div class="glass-card px-6 py-3 flex items-center space-x-3 glow-hover transition-all cursor-default">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<span class="font-mono font-medium text-on-surface">REST APIs</span>
+</div>
+</div>
+</section>
+<!-- END: Skills Section -->
+<!-- BEGIN: Projects Section -->
+<section class="py-24 px-8 md:px-16 bg-surface-container-low border-y border-outline-variant" id="projects">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-4xl font-bold uppercase tracking-wider text-on-surface mb-2">Featured Work</h2>
+<p class="text-on-surface-variant font-mono">Selected mobile applications.</p>
+</div>
+<a class="hidden md:inline-flex items-center space-x-2 text-primary hover:text-on-surface transition-colors font-mono text-sm" href="#">
+<span class="">View all projects</span>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="glass-card overflow-hidden group glow-hover transition-all">
+<div class="h-64 bg-surface-container flex items-center justify-center p-8 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-full h-full bg-surface rounded-lg border border-outline-variant/50 shadow-2xl transform group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
+<span class="text-on-surface-variant font-mono">Project Preview</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold text-on-surface">FinTech Wallet App</h3>
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs font-mono rounded">Flutter</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">A comprehensive mobile wallet application featuring real-time transactions, biometric authentication, and complex data visualization.</p>
+<div class="flex space-x-4">
+<a class="text-sm font-mono text-primary hover:underline flex items-center space-x-1" href="#">
+<span class="">View Case Study</span>
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="glass-card overflow-hidden group glow-hover transition-all">
+<div class="h-64 bg-surface-container flex items-center justify-center p-8 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-tertiary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-full h-full bg-surface rounded-lg border border-outline-variant/50 shadow-2xl transform group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
+<span class="text-on-surface-variant font-mono">Project Preview</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold text-on-surface">E-Commerce Marketplace</h3>
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-xs font-mono rounded">Flutter &amp; Firebase</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Scalable marketplace app using Clean Architecture, featuring advanced search, real-time chat, and complex state management with Bloc.</p>
+<div class="flex space-x-4">
+<a class="text-sm font-mono text-primary hover:underline flex items-center space-x-1" href="#">
+<span class="">View Case Study</span>
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Projects Section -->
+<!-- BEGIN: Certificates Section -->
+<section class="py-24 px-8 md:px-16 max-w-7xl mx-auto" id="certificates">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold uppercase tracking-wider text-on-surface mb-4">Certifications</h2>
+<p class="text-on-surface-variant font-mono max-w-2xl mx-auto">Professional training and validations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card p-6 flex flex-col items-center text-center glow-hover transition-all">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M12 15l-2 5l9-5l-9-5l2 5z"></path><circle cx="12" cy="8" r="5"></circle></svg>
+</div>
+<h3 class="font-bold text-on-surface mb-2">Flutter Developer Bootcamp</h3>
+<p class="text-xs text-on-surface-variant font-mono mb-4">Udemy • 2024</p>
+<a class="text-xs font-mono text-primary hover:underline mt-auto" href="#">Verify Credential</a>
+</div>
+<div class="glass-card p-6 flex flex-col items-center text-center glow-hover transition-all">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M12 15l-2 5l9-5l-9-5l2 5z"></path><circle cx="12" cy="8" r="5"></circle></svg>
+</div>
+<h3 class="font-bold text-on-surface mb-2">Clean Architecture for Mobile</h3>
+<p class="text-xs text-on-surface-variant font-mono mb-4">Coursera • 2024</p>
+<a class="text-xs font-mono text-primary hover:underline mt-auto" href="#">Verify Credential</a>
+</div>
+<div class="glass-card p-6 flex flex-col items-center text-center glow-hover transition-all">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M12 15l-2 5l9-5l-9-5l2 5z"></path><circle cx="12" cy="8" r="5"></circle></svg>
+</div>
+<h3 class="font-bold text-on-surface mb-2">Advanced Dart Programming</h3>
+<p class="text-xs text-on-surface-variant font-mono mb-4">Google Developers • 2023</p>
+<a class="text-xs font-mono text-primary hover:underline mt-auto" href="#">Verify Credential</a>
+</div>
+</div>
+</section>
+<!-- END: Certificates Section -->
+<!-- BEGIN: Contact Section -->
+<section class="py-32 px-8 md:px-16 bg-surface-container-lowest relative overflow-hidden" id="contact">
+<!-- Decorative background elements -->
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-tertiary/5 rounded-full blur-3xl"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10 glass-card p-12 md:p-24 border-primary/20">
+<p class="text-primary font-mono text-sm tracking-widest uppercase mb-4">What's Next?</p>
+<h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-on-surface mb-8">Let's Build<br>Something.</h2>
+<p class="text-on-surface-variant font-mono max-w-xl mx-auto mb-12">
+      I'm currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open.
+    </p>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary font-bold rounded hover:bg-primary-fixed transition-colors text-lg" href="mailto:hello@kerols.dev">
+      Say Hello
+    </a>
+</div>
+</section>
+<!-- END: Contact Section -->
+</main>
+<!-- END: Main Content -->
+<!-- BEGIN: Footer -->
+<footer class="border-t border-outline-variant/50 py-8 text-center bg-background">
+<p class="text-on-surface-variant font-mono text-sm">
+    Designed &amp; Built by Kerols Hany © 2025
+  </p>
+</footer>
+<!-- END: Footer -->
+
+
+</body></html>

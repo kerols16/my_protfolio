@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" type="image/png"
+        href="https://wvbcqgnhdltodoupblbg.supabase.co/storage/v1/object/public/Kerols%20Hany%20cv/tablogo.JPG" />
+    <title>Kerols Hany | Mobile App Developer Portfolio</title>
+
+    <!-- ===== SEO & Open Graph ===== -->
+    <meta name="description"
+        content="Kerols Hany – Mobile App Developer specialized in Android & Flutter. Check out projects like EduManage, Meals App, and Movies App." />
+    <meta property="og:title" content="Kerols Hany | Mobile App Developer Portfolio" />
+    <meta property="og:description"
+        content="Kerols Hany – Mobile App Developer specialized in Android & Flutter. Check out projects like EduManage, Meals App, and Movies App." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/personal_pic.png" />
+    <!-- ===== End SEO ===== -->
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#141c2a",
+                        "tertiary-container": "#0d1422",
+                        "surface-container": "#1e1f25",
+                        "on-tertiary-fixed-variant": "#404757",
+                        "tertiary-fixed-dim": "#c0c6da",
+                        "surface-container-lowest": "#0c0e13",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#2c303a",
+                        "inverse-surface": "#e2e2e9",
+                        "outline-variant": "#5a5c64",
+                        "secondary-container": "#464a4b",
+                        "primary-fixed-dim": "#c3c6d3",
+                        "on-secondary-container": "#b6b9bb",
+                        "on-primary-fixed": "#181c25",
+                        "secondary-fixed-dim": "#c4c7c9",
+                        "outline": "#909096",
+                        "on-secondary-fixed-variant": "#444749",
+                        "on-primary-container": "#7b7e8a",
+                        "surface-container-high": "#282a30",
+                        "surface-tint": "#c3c6d3",
+                        "primary": "#c3c6d3",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2e3036",
+                        "on-background": "#e2e2e9",
+                        "background": "#111319",
+                        "secondary": "#c4c7c9",
+                        "surface-container-highest": "#33353a",
+                        "primary-fixed": "#dfe2ef",
+                        "surface-container-low": "#191b21",
+                        "tertiary": "#9fb0d6",
+                        "on-tertiary-container": "#787e90",
+                        "inverse-primary": "#5a5e69",
+                        "on-secondary": "#2d3133",
+                        "on-surface-variant": "#c6c6cc",
+                        "on-tertiary": "#293040",
+                        "primary-container": "#10141d",
+                        "error": "#ffb4ab",
+                        "surface": "#171921",
+                        "on-error": "#690005",
+                        "surface-bright": "#37393f",
+                        "on-surface": "#e2e2e9",
+                        "surface-variant": "#33353a",
+                        "surface-dim": "#111319",
+                        "tertiary-fixed": "#dce2f6",
+                        "on-primary-fixed-variant": "#434751",
+                        "secondary-fixed": "#e0e3e5",
+                        "on-secondary-fixed": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Geist"],
+                        "sans": ["Geist", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    "fontSize": {
+                        "headline-lg": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-lg": [
+                            "56px",
+                            {
+                                "lineHeight": "64px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "24px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+    <style data-purpose="custom-styles">
+        /* ── 1) Bulletproof Contrast Fix ── */
+        html,
+        body {
+            background-color: #111319 !important;
+            color: #e2e2e9 !important;
+        }
+
+        .glass-card {
+            background: rgba(30, 31, 37, 0.6);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border: 1px solid theme('colors.outline-variant');
+            border-radius: theme('borderRadius.xl');
+        }
+
+        /* تظل glass-card في قسم الشهادات بيضاء مع نص غامق، وهذا مقصود */
+        #certificates .glass-card {
+            background: transparent !important;
+            backdrop-filter: none !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        #certificates .glass-card .text-background {
+            color: inherit !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Geist', sans-serif;
+        }
+
+        /* ── Header hide/show on scroll ── */
+        header {
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        header.header-hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* ── Hero bg text ── */
+        .hero-bg-text {
+            font-size: clamp(10vw, 18vw, 260px);
+            line-height: 0.8;
+            font-weight: 900;
+            color: theme('colors.surface-container-highest');
+            text-transform: uppercase;
+            white-space: nowrap;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            letter-spacing: -0.05em;
+            transition: opacity 0.8s ease;
+        }
+
+        /* ── Animated bg text phrases ── */
+        /* 1) Ghost Text Visibility Fix */
+        .bg-phrase {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            font-size: clamp(6vw, 11vw, 160px);
+            line-height: 0.9;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(195, 198, 211, 1);
+            text-transform: uppercase;
+            z-index: 0;
+            letter-spacing: -0.03em;
+            pointer-events: none;
+            user-select: none;
+            text-align: left;
+            display: none;
+        }
+
+        .bg-phrase.visible {
+            display: block;
+        }
+
+        .bg-phrase .word {
+            display: inline-block;
+            opacity: 0;
+            filter: blur(8px);
+            transform: translateY(10px);
+            animation: wordReveal 0.6s ease forwards;
+        }
+
+        @keyframes wordReveal {
+            to {
+                opacity: 1;
+                filter: blur(0px);
+                transform: translateY(0);
+            }
+        }
+
+        /* ── Hero image wrapper ── */
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 10;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            transform: translateX(45%);
+        }
+
+        /* 3) Image Progressive Blur Blend */
+        .hero-image {
+            max-height: 85%;
+            object-fit: cover;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5)) blur(20px);
+            opacity: 0;
+            animation: heroImageReveal 1.4s ease-out 0.2s forwards;
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%),
+                radial-gradient(ellipse at center, black 60%, transparent 100%);
+            -webkit-mask-composite: source-in;
+            mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%),
+                radial-gradient(ellipse at center, black 60%, transparent 100%);
+            mask-composite: intersect;
+        }
+
+        @keyframes heroImageReveal {
+            0% {
+                filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5)) blur(20px);
+                opacity: 0;
+                transform: scale(1.03);
+            }
+
+            100% {
+                filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5)) blur(0px);
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(195, 198, 211, 0.1);
+            border-color: theme('colors.primary');
+        }
+
+        /* Nav active link — controlled by JS scroll spy */
+        nav a.nav-link {
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.2s;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav a.nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #c3c6d3;
+            border-radius: 2px;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav a.nav-link.active {
+            color: #c3c6d3;
+        }
+
+        nav a.nav-link.active::after {
+            width: 100%;
+        }
+
+        nav a.nav-link:hover {
+            color: #c3c6d3;
+        }
+
+        /* ── Global ambient background ── */
+        .bg-ambient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.12;
+            animation: blobDrift 28s ease-in-out infinite alternate;
+        }
+
+        .bg-blob-1 {
+            width: 40vw;
+            height: 40vw;
+            background: #c3c6d3;
+            top: -10%;
+            left: -10%;
+            animation-duration: 30s;
+        }
+
+        .bg-blob-2 {
+            width: 35vw;
+            height: 35vw;
+            background: #9fb0d6;
+            bottom: -15%;
+            right: -5%;
+            animation-duration: 36s;
+            animation-delay: -6s;
+        }
+
+        .bg-blob-3 {
+            width: 25vw;
+            height: 25vw;
+            background: #c4c7c9;
+            top: 40%;
+            left: 60%;
+            animation-duration: 24s;
+            animation-delay: -12s;
+        }
+
+        @keyframes blobDrift {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(4%, 6%) scale(1.08);
+            }
+
+            100% {
+                transform: translate(-3%, -4%) scale(0.96);
+            }
+        }
+
+        /* ── 2) Subtle Background Animation (Dot Grid) ── */
+        .bg-grid-container {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-grid-container svg {
+            width: 100%;
+            height: 100%;
+            opacity: 0.25;
+            animation: gridPulse 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes gridPulse {
+            0% {
+                opacity: 0.08;
+                transform: scale(1) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0.35;
+                transform: scale(1.05) rotate(0.5deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bg-grid-container svg {
+                animation: none;
+                opacity: 0.08;
+            }
+
+            .bg-blob {
+                animation: none;
+            }
+        }
+
+        /* ── 3) Mobile Hero Fix ── */
+        @media (max-width: 768px) {
+            .hero-image-wrapper {
+                transform: none;
+                justify-content: center;
+                height: auto;
+                max-height: 70vh;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .hero-image {
+                max-height: 55vh;
+                width: auto;
+                margin: 0 auto;
+            }
+
+            .bg-phrase {
+                display: none !important;
+            }
+
+            .hero-text-mobile {
+                text-align: center;
+                margin-top: 1rem;
+                padding: 0 1rem;
+                min-height: 90px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .hero-text-mobile .typewriter-line {
+                font-size: 2.25rem;
+                font-weight: 700;
+                color: #e2e2e9;
+                letter-spacing: -0.02em;
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                max-width: 100%;
+            }
+
+            .hero-text-mobile .typewriter-line.sub {
+                font-size: 1rem;
+                color: #c6c6cc;
+                font-family: 'JetBrains Mono', monospace;
+                margin-top: 0.25rem;
+                white-space: normal;
+            }
+
+            .cursor-blink {
+                display: inline-block;
+                width: 2px;
+                height: 1em;
+                background: #c3c6d3;
+                margin-left: 2px;
+                animation: blink 1s step-end infinite;
+                vertical-align: text-bottom;
+            }
+
+            @keyframes blink {
+
+                0%,
+                100% {
+                    opacity: 1;
+                }
+
+                50% {
+                    opacity: 0;
+                }
+            }
+
+            /* Ensure name doesn't overflow on very small screens */
+            @media (max-width: 400px) {
+                .hero-text-mobile .typewriter-line {
+                    font-size: 1.8rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .hero-text-mobile .typewriter-line.sub {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        /* ── Scroll Reveal (fixed transform → top/left) ── */
+        .reveal {
+            opacity: 0;
+            position: relative;
+            top: 40px;
+            transition: opacity 0.7s ease, top 0.7s ease;
+        }
+
+        .reveal.in-view {
+            opacity: 1;
+            top: 0;
+        }
+
+        .reveal-left {
+            opacity: 0;
+            position: relative;
+            left: -40px;
+            transition: opacity 0.7s ease, left 0.7s ease;
+        }
+
+        .reveal-left.in-view {
+            opacity: 1;
+            left: 0;
+        }
+
+        .reveal-right {
+            opacity: 0;
+            position: relative;
+            left: 40px;
+            transition: opacity 0.7s ease, left 0.7s ease;
+        }
+
+        .reveal-right.in-view {
+            opacity: 1;
+            left: 0;
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal,
+            .reveal-left,
+            .reveal-right {
+                opacity: 1;
+                top: 0;
+                left: 0;
+                transition: none;
+            }
+        }
+
+        /* ── Custom Cursor (with mix-blend-mode: difference) ── */
+        @media (hover: hover) and (pointer: fine) {
+            * {
+                cursor: none !important;
+            }
+
+            .cursor-dot {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 100000;
+                transform: translate(-50%, -50%);
+                background: white;
+                mix-blend-mode: difference;
+                will-change: transform;
+                transition: width 0.2s ease, height 0.2s ease;
+            }
+
+            .cursor-ring {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 32px;
+                height: 32px;
+                border: 1.5px solid rgba(255, 255, 255, 0.5);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 99999;
+                transform: translate(-50%, -50%);
+                mix-blend-mode: difference;
+                will-change: transform;
+                transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+            }
+
+            .cursor-dot.hovering {
+                width: 6px;
+                height: 6px;
+            }
+
+            .cursor-ring.hovering {
+                width: 46px;
+                height: 46px;
+                border-color: rgba(255, 255, 255, 0.8);
+            }
+
+            @supports not (mix-blend-mode: difference) {
+                .cursor-dot {
+                    background: #c3c6d3;
+                    mix-blend-mode: normal;
+                }
+
+                .cursor-ring {
+                    border-color: rgba(195, 198, 211, 0.5);
+                    mix-blend-mode: normal;
+                }
+
+                .cursor-dot.hovering {
+                    background: #9fb0d6;
+                }
+
+                .cursor-ring.hovering {
+                    border-color: rgba(159, 176, 214, 0.8);
+                }
+            }
+        }
+
+        /* ── Logo watermark background ── */
+        .logo-watermark {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-watermark img {
+            width: 65vw;
+            max-width: 800px;
+            height: auto;
+            filter: blur(50px);
+            opacity: 0.15;
+            user-select: none;
+        }
+
+        /* ── Mobile Hamburger Menu ── */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* ── 5) Premium Certificates Card Styles (Dark Theme) ── */
+        .cert-badge {
+            position: relative;
+            background: rgba(30, 31, 37, 0.85);
+            border: 1px solid rgba(195, 198, 211, 0.12);
+            border-radius: 1.25rem;
+            padding: 1.5rem 1.25rem 1.25rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(195, 198, 211, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cert-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #c3c6d3, #9fb0d6, #c3c6d3);
+            background-size: 200% 100%;
+            animation: ribbonShine 4s linear infinite;
+        }
+
+        @keyframes ribbonShine {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            100% {
+                background-position: 200% 0%;
+            }
+        }
+
+        .cert-badge:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(195, 198, 211, 0.25), 0 0 0 2px #c3c6d3;
+        }
+
+        .cert-badge .medal-icon {
+            width: 48px;
+            height: 48px;
+            color: #c3c6d3;
+            margin-bottom: 0.25rem;
+            filter: drop-shadow(0 0 6px rgba(195, 198, 211, 0.2));
+        }
+
+        .cert-badge .title {
+            font-weight: 700;
+            color: #e2e2e9;
+            font-size: 1.125rem;
+            line-height: 1.3;
+        }
+
+        .cert-badge .subtitle {
+            font-size: 0.875rem;
+            color: rgba(226, 226, 233, 0.75);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-badge .date {
+            font-size: 0.7rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: rgba(226, 226, 233, 0.55);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.2rem 0.8rem;
+            border-radius: 9999px;
+            margin-top: auto;
+        }
+
+        /* override for certificates section to use this style */
+        #certificates .glass-card {
+            background: transparent !important;
+            backdrop-filter: none !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        #certificates .glass-card .text-background {
+            color: inherit !important;
+        }
+
+        /* ── Scroll Down Indicator ── */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(195, 198, 211, 0.6);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            z-index: 20;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .scroll-indicator.hidden {
+            opacity: 0;
+        }
+
+        .scroll-arrow {
+            width: 20px;
+            height: 20px;
+            animation: scrollBounce 1.8s ease-in-out infinite;
+        }
+
+        @keyframes scrollBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: translateY(8px);
+                opacity: 1;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-arrow {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased min-h-screen flex flex-col selection:bg-primary/30 selection:text-primary">
+
+    <!-- BEGIN: Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <!-- END: Custom Cursor -->
+
+    <!-- BEGIN: Ambient Background + Grid Animation -->
+    <div class="bg-ambient">
+        <div class="bg-blob bg-blob-1"></div>
+        <div class="bg-blob bg-blob-2"></div>
+        <div class="bg-blob bg-blob-3"></div>
+    </div>
+    <!-- Subtle Dot Grid (enhanced) -->
+    <div class="bg-grid-container" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <defs>
+                <pattern id="dotGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="2" fill="#c3c6d3" opacity="0.9" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dotGrid)" />
+        </svg>
+    </div>
+    <!-- END: Ambient Background + Grid -->
+
+    <!-- BEGIN: Logo Watermark -->
+    <div class="logo-watermark">
+        <img id="watermark-logo"
+            src="https://wvbcqgnhdltodoupblbg.supabase.co/storage/v1/object/public/Kerols%20Hany%20cv/logo.png"
+            alt="" />
+    </div>
+    <!-- END: Logo Watermark -->
+    <!-- BEGIN: Header -->
+    <header id="site-header"
+        class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant px-6 py-4 flex justify-between items-center header-hidden">
+        <img id="header-logo" src="assets/White logo.png" alt="Kerols Hany Logo" class="h-14 w-auto scale-150" />
+        <nav class="hidden md:flex space-x-8 text-sm font-medium text-on-surface-variant font-mono">
+            <a class="nav-link active" href="#home">Home</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#skills">Skills</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#certificates">Certificates</a>
+            <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <button id="cv-download-btn"
+                class="px-4 py-2 text-sm font-mono font-medium border border-outline-variant rounded-md hover:bg-surface-container hover:text-primary transition-colors text-on-surface-variant">
+                Download CV
+            </button>
+            <button id="hamburger-btn"
+                class="md:hidden text-on-surface-variant hover:text-primary transition-colors focus:outline-none"
+                aria-label="Toggle menu">
+                <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div class="flex space-x-2 text-on-surface-variant hidden sm:flex">
+                <a id="linkedin-link" class="hover:text-primary transition-colors" href="#" target="_blank"
+                    rel="noopener">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect height="12" width="4" x="2" y="9"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a id="github-link" class="hover:text-primary transition-colors" href="#" target="_blank"
+                    rel="noopener">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- END: Header -->
+
+    <!-- ===== Mobile Menu (Dropdown) ===== -->
+    <div id="mobile-menu"
+        class="mobile-menu md:hidden fixed top-[72px] left-0 w-full bg-surface-container/95 backdrop-blur-lg border-b border-outline-variant z-40">
+        <nav class="flex flex-col items-center py-6 space-y-5 text-sm font-medium font-mono text-on-surface">
+            <a class="nav-link active" href="#home">Home</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#skills">Skills</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#certificates">Certificates</a>
+            <a class="nav-link" href="#contact">Contact</a>
+            <!-- Mobile social icons -->
+            <div class="flex space-x-4 pt-4 border-t border-outline-variant/30 w-full justify-center">
+                <a id="mobile-linkedin-link" class="hover:text-primary transition-colors" href="#" target="_blank"
+                    rel="noopener">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect height="12" width="4" x="2" y="9"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a id="mobile-github-link" class="hover:text-primary transition-colors" href="#" target="_blank"
+                    rel="noopener">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- BEGIN: Main Content -->
+    <main class="flex-grow pb-16 overflow-hidden relative">
+        <!-- BEGIN: Hero Section -->
+        <section
+            class="relative w-full h-screen flex flex-col justify-center items-center px-8 md:px-16 overflow-hidden"
+            id="home">
+            <!-- Animated Background Phrases -->
+            <div class="bg-phrase visible" id="bg-phrase-1"></div>
+            <div class="bg-phrase" id="bg-phrase-2"></div>
+
+            <!-- Center Image — enlarged -->
+            <div class="hero-image-wrapper w-full h-full max-w-4xl">
+                <img alt="Kerols Hany - Mobile App Developer"
+                    class="hero-image object-contain object-bottom w-full h-full" src="assets/personal_pic.png" />
+                <!-- Mobile hero text (visible only on small screens) -->
+                <div class="hero-text-mobile md:hidden">
+                    <span class="typewriter-line" id="typewriter-name"></span>
+                    <span class="typewriter-line sub" id="typewriter-title"></span>
+                </div>
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <div class="scroll-indicator" id="scrollIndicator">
+                <span class="scroll-text">Scroll</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="scroll-arrow">
+                    <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+            </div>
+        </section>
+        <!-- END: Hero Section -->
+
+        <!-- BEGIN: About Section — all text uses text-on-surface after fix -->
+        <section class="py-24 px-8 md:px-16 max-w-7xl mx-auto" id="about">
+            <div class="text-center mb-14">
+                <h2 class="text-4xl font-bold uppercase tracking-wider text-on-surface mb-4 reveal">About Me</h2>
+                <p class="text-on-surface font-mono max-w-xl mx-auto reveal reveal-delay-1" id="about-subtitle">Who I am
+                    and what drives me to build great mobile experiences.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="about-grid">
+                <div class="glass-card p-6 md:p-8 reveal-left">
+                    <p class="text-base text-on-surface leading-relaxed font-mono" id="about-paragraph-1">
+                        Loading…
+                    </p>
+                </div>
+                <div class="glass-card p-6 md:p-8 reveal-right">
+                    <p class="text-base text-on-surface leading-relaxed font-mono" id="about-paragraph-2">
+                        Loading…
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- END: About Section -->
+
+        <!-- BEGIN: Skills Section — all text uses text-on-surface after fix -->
+        <section class="py-24 px-8 md:px-16 max-w-7xl mx-auto" id="skills">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold uppercase tracking-wider text-on-surface mb-4 reveal">Technical Arsenal
+                </h2>
+                <p class="text-on-surface font-mono max-w-2xl mx-auto reveal reveal-delay-1" id="skills-subtitle">Tools
+                    and technologies I use to bring mobile experiences to life.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto" id="skills-grid">
+                <p class="text-on-surface font-mono">Loading skills…</p>
+            </div>
+        </section>
+        <!-- END: Skills Section -->
+
+        <!-- BEGIN: Projects Section -->
+        <section class="py-24 px-8 md:px-16 bg-surface-container-low border-y border-outline-variant" id="projects">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-4xl font-bold uppercase tracking-wider text-on-surface mb-2 reveal">Featured
+                            Work
+                        </h2>
+                        <p class="text-on-surface-variant font-mono reveal reveal-delay-1" id="projects-subtitle">
+                            Selected mobile applications.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+                    <p class="text-on-surface-variant font-mono col-span-2 text-center">Loading projects…</p>
+                </div>
+            </div>
+        </section>
+        <!-- END: Projects Section -->
+
+        <!-- BEGIN: Certificates / Experience Section — premium badge cards -->
+        <section class="py-24 px-8 md:px-16 max-w-7xl mx-auto" id="certificates">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold uppercase tracking-wider text-background mb-4 reveal">Experience &amp;
+                    Education
+                </h2>
+                <p class="text-background font-mono max-w-2xl mx-auto reveal reveal-delay-1" id="experience-subtitle">My
+                    professional journey and academic background.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="experience-grid">
+                <p class="text-background font-mono col-span-3 text-center">Loading experience…</p>
+            </div>
+        </section>
+        <!-- END: Certificates / Experience Section -->
+
+        <!-- BEGIN: Contact Section (FIXED: responsive padding & heading) -->
+        <section class="py-32 px-8 md:px-16 bg-surface-container-lowest relative overflow-hidden" id="contact">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-tertiary/5 rounded-full blur-3xl"></div>
+            <div
+                class="max-w-4xl mx-auto text-center relative z-10 glass-card p-8 sm:p-12 md:p-24 border-primary/20 reveal">
+                <p class="text-primary font-mono text-sm tracking-widest uppercase mb-4 reveal reveal-delay-1"
+                    id="contact-eyebrow">What's Next?</p>
+                <h2 class="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter text-on-surface mb-8 reveal reveal-delay-2"
+                    id="contact-heading">Let's Build<br />Something.</h2>
+                <p class="text-on-surface-variant font-mono max-w-xl mx-auto mb-12 reveal reveal-delay-3"
+                    id="contact-paragraph">
+                    I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
+                    my inbox is always open.
+                </p>
+                <!-- Button wrapper for responsive layout -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary font-bold rounded hover:bg-primary-fixed transition-colors text-lg reveal reveal-delay-3"
+                        href="mailto:kerolshany16@gmail.com" id="contact-email-link">
+                        Say Hello
+                    </a>
+                    <!-- BEGIN: WhatsApp Button -->
+                    <a class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-outline-variant text-on-surface font-bold rounded hover:bg-white/5 hover:border-primary transition-colors text-lg reveal reveal-delay-3"
+                        href="#" id="whatsapp-btn" target="_blank" rel="noopener">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                            <path
+                                d="M12.012 2C6.494 2 2.016 6.478 2.016 11.996c0 1.998.58 3.86 1.582 5.428L2 22l4.716-1.556c1.503.83 3.23 1.302 5.296 1.302h.005c5.518 0 9.996-4.478 9.996-9.996C21.997 6.478 17.529 2 12.012 2zm5.887 15.87c-.244.687-1.44 1.31-1.98 1.396-.505.08-1.14.114-1.837-.116-.424-.14-.968-.323-1.664-.633-2.928-1.265-4.84-4.204-4.988-4.401-.148-.198-1.204-1.6-1.204-3.052 0-1.452.76-2.166 1.03-2.463.27-.297.591-.372.788-.372.198 0 .396.002.569.011.183.008.428-.07.669.51.248.594.842 2.057.916 2.207.075.149.124.322.025.52-.1.199-.149.323-.298.497-.148.173-.312.387-.446.52-.149.148-.303.309-.13.606.173.298.77 1.271 1.653 2.06 1.135 1.011 2.093 1.324 2.39 1.474.297.148.471.124.644-.075.173-.198.743-.867.94-1.164.198-.298.396-.249.669-.15.272.1 1.733.818 2.03.967.297.15.495.223.57.347.074.124.074.719-.17 1.413z" />
+                        </svg>
+                        Chat on WhatsApp
+                    </a>
+                    <!-- END: WhatsApp Button -->
+                </div>
+                <div class="mt-8 flex flex-col items-center gap-2">
+                    <span class="text-on-surface-variant font-mono text-sm" id="contact-phone">+20 120 899
+                        7654</span>
+                    <span class="text-on-surface-variant font-mono text-sm" id="contact-location">Cairo, Egypt</span>
+                </div>
+            </div>
+        </section>
+        <!-- END: Contact Section -->
+    </main>
+    <!-- END: Main Content -->
+
+    <!-- BEGIN: Footer -->
+    <footer class="border-t border-outline-variant/50 py-8 text-center bg-background">
+        <p class="text-on-surface-variant font-mono text-sm" id="footer-text">
+            Designed &amp; Built by Kerols Hany © 2026
+        </p>
+    </footer>
+    <!-- END: Footer -->
+
+    <script src="supabase-config.js">
+    </script>
+    <script>
+            (function () {
+                /* ── 1. Header hide/show on scroll ── */
+                const header = document.getElementById('site-header');
+                let lastScroll = 0;
+
+                // Show header immediately on load
+                header.classList.remove('header-hidden');
+
+                window.addEventListener('scroll', () => {
+                    const current = window.scrollY;
+                    if (current <= 80) {
+                        header.classList.add('header-hidden');
+                    } else if (current < lastScroll) {
+                        header.classList.remove('header-hidden');
+                    } else {
+                        header.classList.remove('header-hidden');
+                    }
+                    lastScroll = current <= 0 ? 0 : current;
+                }, { passive: true });
+
+                /* ── 2. Background text alternating animation ── */
+                const phrase1 = document.getElementById('bg-phrase-1');
+                const phrase2 = document.getElementById('bg-phrase-2');
+
+                // Default phrase texts (will be overridden by Supabase if available)
+                const phraseTexts = {
+                    1: ['MOBILE APP', 'DEVELOPER'],
+                    2: ['KEROLS', 'HANY RAUF']
+                };
+
+                function buildWords(el, lines) {
+                    el.innerHTML = '';
+                    let wordIndex = 0;
+                    lines.forEach((line, lineIdx) => {
+                        const lineWords = line.split(' ');
+                        lineWords.forEach((word, i) => {
+                            const span = document.createElement('span');
+                            span.className = 'word';
+                            span.textContent = word;
+                            span.style.animationDelay = `${wordIndex * 0.15}s`;
+                            el.appendChild(span);
+                            if (i < lineWords.length - 1) el.appendChild(document.createTextNode(' '));
+                            wordIndex++;
+                        });
+                        if (lineIdx < lines.length - 1) el.appendChild(document.createElement('br'));
+                    });
+                }
+
+                let showingFirst = true;
+                let intervalId = null;
+
+                function startPhraseRotation() {
+                    if (intervalId) clearInterval(intervalId);
+                    // Initial build
+                    buildWords(phrase1, phraseTexts[1]);
+                    phrase1.classList.add('visible');
+                    phrase2.classList.remove('visible');
+
+                    intervalId = setInterval(() => {
+                        if (showingFirst) {
+                            // Hide phrase 1
+                            phrase1.classList.remove('visible');
+                            setTimeout(() => {
+                                // Build phrase 2 words while hidden
+                                buildWords(phrase2, phraseTexts[2]);
+                                // Show phrase 2
+                                phrase2.classList.add('visible');
+                            }, 400);
+                        } else {
+                            // Hide phrase 2
+                            phrase2.classList.remove('visible');
+                            setTimeout(() => {
+                                // Build phrase 1 words while hidden
+                                buildWords(phrase1, phraseTexts[1]);
+                                // Show phrase 1
+                                phrase1.classList.add('visible');
+                            }, 400);
+                        }
+                        showingFirst = !showingFirst;
+                    }, 4200);
+                }
+
+                startPhraseRotation();
+
+                // Expose phraseTexts and buildWords for renderSiteContent to update
+                window.__phraseTexts = phraseTexts;
+                window.__buildWords = buildWords;
+                window.__phrase1 = phrase1;
+                window.__phrase2 = phrase2;
+                window.__startPhraseRotation = startPhraseRotation;
+
+                /* ── 2) Mobile Typing Animation (dynamic) ── */
+                function initMobileTyping(name, title) {
+                    const nameEl = document.getElementById('typewriter-name');
+                    const titleEl = document.getElementById('typewriter-title');
+                    if (!nameEl || !titleEl) return;
+
+                    // Use provided values or fallback to hardcoded defaults
+                    const nameText = name || 'Kerols Hany Rauf';
+                    const titleText = title || 'Mobile App Developer';
+                    const speed = 70;
+                    const pause = 800;
+
+                    // Clear existing content
+                    nameEl.textContent = '';
+                    titleEl.textContent = '';
+
+                    // Start typing
+                    setTimeout(() => {
+                        let nameIndex = 0;
+                        function typeName() {
+                            if (nameIndex < nameText.length) {
+                                nameEl.textContent += nameText.charAt(nameIndex);
+                                nameIndex++;
+                                setTimeout(typeName, speed);
+                            } else {
+                                // Name done, add cursor
+                                const cursor = document.createElement('span');
+                                cursor.className = 'cursor-blink';
+                                nameEl.appendChild(cursor);
+                                // pause then type title
+                                setTimeout(() => {
+                                    // remove cursor from name
+                                    const c = nameEl.querySelector('.cursor-blink');
+                                    if (c) c.remove();
+                                    // start typing title
+                                    let titleIndex = 0;
+                                    function typeTitle() {
+                                        if (titleIndex < titleText.length) {
+                                            titleEl.textContent += titleText.charAt(titleIndex);
+                                            titleIndex++;
+                                            setTimeout(typeTitle, speed);
+                                        } else {
+                                            // add cursor to title
+                                            const tc = document.createElement('span');
+                                            tc.className = 'cursor-blink';
+                                            titleEl.appendChild(tc);
+                                        }
+                                    }
+                                    typeTitle();
+                                }, pause);
+                            }
+                        }
+                        typeName();
+                    }, 300);
+                }
+
+                // Expose function globally for renderSiteContent
+                window.initMobileTyping = initMobileTyping;
+
+                // Also call it with default values now (will be overridden by Supabase fetch later)
+                // but we want to avoid duplicate typing; we'll call it from renderSiteContent.
+                // The initial call will be done after the fetch, so we skip here.
+
+                /* ── 3. Scroll spy: active nav link ── */
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('nav a.nav-link');
+
+                function setActive(id) {
+                    navLinks.forEach(link => {
+                        const isActive = link.getAttribute('href') === '#' + id;
+                        link.classList.toggle('active', isActive);
+                    });
+                }
+
+                const spyObserver = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) setActive(entry.target.id);
+                        });
+                    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+                );
+                sections.forEach(sec => spyObserver.observe(sec));
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        setActive(link.getAttribute('href').substring(1));
+                    });
+                });
+
+                /* ── 4. Mobile Hamburger Menu ── */
+                const hamburgerBtn = document.getElementById('hamburger-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const hamburgerIcon = document.getElementById('hamburger-icon');
+
+                if (hamburgerBtn && mobileMenu) {
+                    hamburgerBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const isOpen = mobileMenu.classList.toggle('open');
+                        // Toggle icon between hamburger and X
+                        if (isOpen) {
+                            hamburgerIcon.innerHTML = `
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            `;
+                        } else {
+                            hamburgerIcon.innerHTML = `
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            `;
+                        }
+                    });
+
+                    // Close menu when a link is clicked
+                    const mobileNavLinks = mobileMenu.querySelectorAll('a');
+                    mobileNavLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.remove('open');
+                            hamburgerIcon.innerHTML = `
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            `;
+                        });
+                    });
+
+                    // Close menu when clicking outside (optional)
+                    document.addEventListener('click', (e) => {
+                        if (mobileMenu.classList.contains('open') &&
+                            !mobileMenu.contains(e.target) &&
+                            !hamburgerBtn.contains(e.target)) {
+                            mobileMenu.classList.remove('open');
+                            hamburgerIcon.innerHTML = `
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            `;
+                        }
+                    });
+                }
+
+                /* ── 5) Scroll Down Indicator ── */
+                const scrollIndicator = document.getElementById('scrollIndicator');
+                if (scrollIndicator) {
+                    let hasScrolled = false;
+                    window.addEventListener('scroll', () => {
+                        if (!hasScrolled && window.scrollY > 50) {
+                            hasScrolled = true;
+                            scrollIndicator.classList.add('hidden');
+                        }
+                    }, { passive: true });
+                }
+            })();
+    </script>
+
+    <!-- ===== Dynamic content loaders (Supabase) ===== -->
+    <script>
+        /* ── Render Projects ── */
+        (async function renderProjects() {
+            const grid = document.getElementById('projects-grid');
+            if (!grid) return;
+
+            try {
+                const projects = await fetchFromSupabase('projects', 'select=*&order=sort_order.asc');
+
+                // Explicit color map with full Tailwind classes (no template literals)
+                const colorMap = {
+                    primary: { grad: 'from-primary/10', badgeBg: 'bg-primary/10', badgeText: 'text-primary' },
+                    tertiary: { grad: 'from-tertiary/10', badgeBg: 'bg-tertiary/10', badgeText: 'text-tertiary' },
+                    green: { grad: 'from-[#3DDC84]/10', badgeBg: 'bg-[#3DDC84]/10', badgeText: 'text-[#3DDC84]' },
+                    orange: { grad: 'from-[#f89820]/10', badgeBg: 'bg-[#f89820]/10', badgeText: 'text-[#f89820]' }
+                };
+
+                if (!projects || !projects.length) {
+                    grid.innerHTML =
+                        `<p class="text-on-surface-variant font-mono col-span-2 text-center">No projects yet.</p>`;
+                    return;
+                }
+
+                grid.innerHTML = '';
+                projects.forEach(p => {
+                    const c = colorMap[p.tag_color] || colorMap.primary;
+                    const card = document.createElement('div');
+                    card.className = 'glass-card overflow-hidden group glow-hover transition-all';
+                    card.innerHTML = `
+                        <div class="bg-surface-container relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-tr ${c.grad} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
+                            <img src="${p.hero_image || ''}" alt="${p.title} preview" class="w-full h-auto block transform group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-on-surface">${p.title}</h3>
+                                <span class="px-2 py-1 ${c.badgeBg} ${c.badgeText} text-xs font-mono rounded whitespace-nowrap ml-2">${p.tag}</span>
+                            </div>
+                            <p class="text-on-surface-variant text-sm mb-6 line-clamp-2">${p.short_desc}</p>
+                            <div class="flex space-x-4">
+                                <a class="text-sm font-mono text-primary hover:underline flex items-center space-x-1" href="./case-study.html?slug=${p.slug}">
+                                    <span>View Case Study</span>
+                                    <svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 17l9.2-9.2M17 17V7H7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>`;
+                    grid.appendChild(card);
+                });
+
+                // Add reveal classes to dynamically created project cards
+                grid.querySelectorAll(':scope > div').forEach((el, i) => {
+                    el.classList.add('reveal', `reveal-delay-${(i % 3) + 1}`);
+                });
+                if (window.__reobserveReveal) window.__reobserveReveal();
+
+            } catch (err) {
+                console.warn('Projects fetch failed:', err);
+                grid.innerHTML =
+                    `<p class="text-on-surface-variant font-mono col-span-2 text-center">Failed to load projects.</p>`;
+            }
+        })();
+
+        /* ── Render Skills ── */
+        (async function renderSkills() {
+            const grid = document.getElementById('skills-grid');
+            if (!grid) return;
+
+            try {
+                const skills = await fetchFromSupabase('skills', 'select=*&order=sort_order.asc');
+
+                if (!skills || !skills.length) {
+                    grid.innerHTML = `<p class="text-on-surface font-mono">No skills added yet.</p>`;
+                    return;
+                }
+
+                grid.innerHTML = '';
+                skills.forEach(s => {
+                    const badge = document.createElement('div');
+                    badge.className =
+                        'glass-card px-6 py-3 flex items-center space-x-3 glow-hover transition-all cursor-default';
+                    badge.innerHTML = `
+                            <div class="w-2 h-2 rounded-full" style="background-color: ${s.color_hex}"></div>
+                            <span class="font-mono font-medium text-on-surface">${s.name}</span>`;
+                    grid.appendChild(badge);
+                });
+
+                // Add reveal classes to dynamically created skill badges
+                grid.querySelectorAll(':scope > div').forEach((el, i) => {
+                    el.classList.add('reveal', `reveal-delay-${(i % 3) + 1}`);
+                });
+                if (window.__reobserveReveal) window.__reobserveReveal();
+
+            } catch (err) {
+                console.warn('Skills fetch failed:', err);
+                grid.innerHTML = `<p class="text-on-surface font-mono">Failed to load skills.</p>`;
+            }
+        })();
+
+        /* ── Render Experience / Education (Premium Badge Cards) ── */
+        (async function renderExperience() {
+            const grid = document.getElementById('experience-grid');
+            if (!grid) return;
+
+            try {
+                const items = await fetchFromSupabase('experience', 'select=*&order=sort_order.asc');
+
+                if (!items || !items.length) {
+                    grid.innerHTML =
+                        `<p class="text-background font-mono col-span-3 text-center">No experience added yet.</p>`;
+                    return;
+                }
+
+                grid.innerHTML = '';
+                items.forEach(item => {
+                    // Build premium badge card
+                    const card = document.createElement('div');
+                    card.className = 'cert-badge';
+
+                    // Medal icon (SVG)
+                    const medalIcon = `
+                        <svg class="medal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 15v2m-6 4h12M12 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
+                            <path d="M12 3v2m6 4h2M4 9H2" />
+                        </svg>
+                    `;
+
+                    // Image if available, else use medal icon
+                    const imageBlock = item.image_url
+                        ? `<div class="w-16 h-16 rounded-full overflow-hidden ring-2 ring-primary/30 shadow-lg -mt-2">
+                               <img src="${item.image_url}" alt="${item.subtitle}" class="w-full h-full object-cover" />
+                           </div>`
+                        : medalIcon;
+
+                    card.innerHTML = `
+                            ${imageBlock}
+                            <div class="title">${item.title}</div>
+                            <div class="subtitle">${item.subtitle}</div>
+                            <div class="date">${item.date_range}</div>
+                        `;
+                    grid.appendChild(card);
+                });
+
+                // Add reveal classes to dynamically created cards
+                grid.querySelectorAll(':scope > div').forEach((el, i) => {
+                    el.classList.add('reveal', `reveal-delay-${(i % 3) + 1}`);
+                });
+                if (window.__reobserveReveal) window.__reobserveReveal();
+
+            } catch (err) {
+                console.warn('Experience fetch failed:', err);
+                grid.innerHTML =
+                    `<p class="text-background font-mono col-span-3 text-center">Failed to load experience.</p>`;
+            }
+        })();
+
+        /* ── Render Site Content (Hero / About / Contact) ── */
+        (async function renderSiteContent() {
+            try {
+                const rows = await fetchFromSupabase('site_content', 'select=*');
+                if (!rows || !rows.length) return;
+
+                const content = {};
+                rows.forEach(r => content[r.key] = r.value);
+
+                const setText = (id, key, fallback = '') => {
+                    const el = document.getElementById(id);
+                    // fallback: retains existing HTML content if key missing
+                    if (el && content[key] !== undefined) el.textContent = content[key];
+                    // else leave existing text (HTML default) as fallback
+                };
+
+                // Existing
+                setText('about-paragraph-1', 'about_paragraph_1');
+                setText('about-paragraph-2', 'about_paragraph_2');
+                setText('contact-phone', 'contact_phone');
+                setText('contact-location', 'contact_location');
+
+                // Newly added (with explicit fallback comment)
+                setText('about-subtitle', 'about_subtitle');       // fallback: hardcoded in HTML
+                setText('skills-subtitle', 'skills_subtitle');     // fallback: hardcoded in HTML
+                setText('projects-subtitle', 'projects_subtitle'); // fallback: hardcoded in HTML
+                setText('experience-subtitle', 'experience_subtitle'); // fallback: hardcoded in HTML
+                setText('contact-eyebrow', 'contact_eyebrow');     // fallback: hardcoded in HTML
+                setText('contact-paragraph', 'contact_paragraph'); // fallback: hardcoded in HTML
+                setText('footer-text', 'footer_text');             // fallback: hardcoded in HTML
+
+                // contact-heading (supports newlines)
+                if (content.contact_heading) {
+                    const headingEl = document.getElementById('contact-heading');
+                    if (headingEl) headingEl.innerHTML = content.contact_heading.replace(/\n/g, '<br/>');
+                }
+
+                // Contact email
+                if (content.contact_email) {
+                    const link = document.getElementById('contact-email-link');
+                    if (link) link.href = 'mailto:' + content.contact_email;
+                }
+
+                // CV download
+                if (content.cv_url) {
+                    const cvBtn = document.getElementById('cv-download-btn');
+                    if (cvBtn) {
+                        cvBtn.addEventListener('click', () => window.open(content.cv_url, '_blank'));
+                    }
+                }
+
+                // LinkedIn (desktop)
+                if (content.linkedin_url) {
+                    const link = document.getElementById('linkedin-link');
+                    if (link) link.href = content.linkedin_url;
+                    const mobileLink = document.getElementById('mobile-linkedin-link');
+                    if (mobileLink) mobileLink.href = content.linkedin_url;
+                }
+
+                // GitHub (desktop)
+                if (content.github_url) {
+                    const link = document.getElementById('github-link');
+                    if (link) link.href = content.github_url;
+                    const mobileLink = document.getElementById('mobile-github-link');
+                    if (mobileLink) mobileLink.href = content.github_url;
+                }
+
+                // WhatsApp: use whatsapp_number if available, else fallback to contact_phone
+                const whatsappBtn = document.getElementById('whatsapp-btn');
+                if (whatsappBtn) {
+                    let phone = content.whatsapp_number || content.contact_phone || '';
+                    const cleanNumber = phone.replace(/\D/g, '');
+                    if (cleanNumber) {
+                        const message = encodeURIComponent("Hi Kerols! I saw your portfolio and I'd like to get in touch.");
+                        whatsappBtn.href = `https://wa.me/${cleanNumber}?text=${message}`;
+                        whatsappBtn.style.display = ''; // ensure visible
+                    } else {
+                        // No number available, hide the button
+                        whatsappBtn.style.display = 'none';
+                    }
+                }
+
+                if (content.header_logo_url) {
+                    const headerLogo = document.getElementById('header-logo');
+                    if (headerLogo) headerLogo.src = content.header_logo_url;
+                }
+
+                // Watermark logo (can be the fuller/blurred version)
+                if (content.logo_url) {
+                    const watermarkLogo = document.getElementById('watermark-logo');
+                    if (watermarkLogo) watermarkLogo.src = content.logo_url;
+                }
+
+                // Hero name & title → update both background phrases AND mobile typewriter
+                if (content.hero_name) {
+                    const parts = content.hero_name.trim().split(' ');
+                    const first = parts[0] || 'KEROLS';
+                    const rest = parts.slice(1).join(' ') || 'HANY RAUF';
+                    window.__phraseTexts[2] = [first, rest];
+                }
+                if (content.hero_title) {
+                    const words = content.hero_title.trim().split(' ');
+                    window.__phraseTexts[1] = words.length ? words : ['MOBILE APP', 'DEVELOPER'];
+                }
+
+                // Rebuild the currently visible phrase with new text
+                const phrase1El = window.__phrase1;
+                const phrase2El = window.__phrase2;
+                const buildWordsFn = window.__buildWords;
+
+                if (phrase1El && buildWordsFn) {
+                    // Check which one is visible and rebuild it
+                    if (phrase1El.classList.contains('visible')) {
+                        buildWordsFn(phrase1El, window.__phraseTexts[1]);
+                    } else if (phrase2El && phrase2El.classList.contains('visible')) {
+                        buildWordsFn(phrase2El, window.__phraseTexts[2]);
+                    } else {
+                        // Default: rebuild phrase1
+                        buildWordsFn(phrase1El, window.__phraseTexts[1]);
+                        phrase1El.classList.add('visible');
+                    }
+                }
+
+                // Mobile typewriter: use hero_name and hero_title (fallback to defaults inside function)
+                if (window.initMobileTyping) {
+                    window.initMobileTyping(content.hero_name, content.hero_title);
+                }
+
+            } catch (err) {
+                console.warn('Site content fetch failed:', err);
+                // Keep default content, no error display needed
+                // Also init typing with defaults if fetch fails
+                if (window.initMobileTyping) {
+                    window.initMobileTyping(); // uses hardcoded fallbacks
+                }
+            }
+        })();
+    </script>
+
+    <!-- ===== Scroll Reveal Observer ===== -->
+    <script>
+        (function initScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    } else {
+                        entry.target.classList.remove('in-view');
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+            function observeAll() {
+                document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            observeAll();
+            window.__reobserveReveal = observeAll;
+        })();
+    </script>
+
+    <!-- ===== Custom Cursor ===== -->
+    <script>
+        (function initCustomCursor() {
+            const dot = document.getElementById('cursorDot');
+            const ring = document.getElementById('cursorRing');
+            if (!dot || !ring) return;
+            if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+            let mouseX = 0, mouseY = 0;
+            let ringX = 0, ringY = 0;
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                dot.style.left = mouseX + 'px';
+                dot.style.top = mouseY + 'px';
+            });
+
+            function animateRing() {
+                ringX += (mouseX - ringX) * 0.15;
+                ringY += (mouseY - ringY) * 0.15;
+                ring.style.left = ringX + 'px';
+                ring.style.top = ringY + 'px';
+                requestAnimationFrame(animateRing);
+            }
+            animateRing();
+
+            const hoverTargets = 'a, button, .glass-card, [onclick]';
+            document.addEventListener('mouseover', (e) => {
+                if (e.target.closest(hoverTargets)) {
+                    dot.classList.add('hovering');
+                    ring.classList.add('hovering');
+                }
+            });
+            document.addEventListener('mouseout', (e) => {
+                if (e.target.closest(hoverTargets)) {
+                    dot.classList.remove('hovering');
+                    ring.classList.remove('hovering');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

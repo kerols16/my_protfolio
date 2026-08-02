@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/png" href="https://wvbcqgnhdltodoupblbg.supabase.co/storage/v1/object/public/Kerols%20Hany%20cv/tablogo.JPG" />
+<title id="page-title">FinTech Wallet App | Kerols Hany</title>
+
+<!-- ===== SEO Meta Tags (dynamically updated) ===== -->
+<meta name="description" content="A high-performance, secure digital wallet application built with Flutter." />
+<meta property="og:title" content="FinTech Wallet App | Kerols Hany" />
+<meta property="og:description" content="A high-performance, secure digital wallet application built with Flutter." />
+<meta property="og:image" content="" />
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-fixed": "#141c2a",
+                "tertiary-container": "#0d1422",
+                "surface-container": "#1e1f25",
+                "on-tertiary-fixed-variant": "#404757",
+                "tertiary-fixed-dim": "#c0c6da",
+                "surface-container-lowest": "#0c0e13",
+                "on-error-container": "#ffdad6",
+                "on-primary": "#2c303a",
+                "inverse-surface": "#e2e2e9",
+                "outline-variant": "#5a5c64",
+                "secondary-container": "#464a4b",
+                "primary-fixed-dim": "#c3c6d3",
+                "on-secondary-container": "#b6b9bb",
+                "on-primary-fixed": "#181c25",
+                "secondary-fixed-dim": "#c4c7c9",
+                "outline": "#909096",
+                "on-secondary-fixed-variant": "#444749",
+                "on-primary-container": "#7b7e8a",
+                "surface-container-high": "#282a30",
+                "surface-tint": "#c3c6d3",
+                "primary": "#c3c6d3",
+                "error-container": "#93000a",
+                "inverse-on-surface": "#2e3036",
+                "on-background": "#e2e2e9",
+                "background": "#111319",
+                "secondary": "#c4c7c9",
+                "surface-container-highest": "#33353a",
+                "primary-fixed": "#dfe2ef",
+                "surface-container-low": "#191b21",
+                "tertiary": "#9fb0d6",
+                "on-tertiary-container": "#787e90",
+                "inverse-primary": "#5a5e69",
+                "on-secondary": "#2d3133",
+                "on-surface-variant": "#c6c6cc",
+                "on-tertiary": "#293040",
+                "primary-container": "#10141d",
+                "error": "#ffb4ab",
+                "surface": "#171921",
+                "on-error": "#690005",
+                "surface-bright": "#37393f",
+                "on-surface": "#e2e2e9",
+                "surface-variant": "#33353a",
+                "surface-dim": "#171921",
+                "tertiary-fixed": "#dce2f6",
+                "on-primary-fixed-variant": "#434751",
+                "secondary-fixed": "#e0e3e5",
+                "on-secondary-fixed": "#191c1e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "20px",
+                "gutter": "24px",
+                "base": "8px",
+                "margin-desktop": "64px",
+                "container-max": "1440px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Geist"
+                ],
+                "body-md": [
+                        "Geist"
+                ],
+                "display-lg": [
+                        "Geist"
+                ],
+                "label-sm": [
+                        "JetBrains Mono"
+                ],
+                "headline-lg-mobile": [
+                        "Geist"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "56px",
+                        {
+                                "lineHeight": "64px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        /* ===== Background Ambient ===== */
+        .bg-ambient {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            will-change: transform;
+            animation: blobDrift 20s infinite ease-in-out alternate;
+        }
+        .bg-blob-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(195, 198, 211, 0.15), transparent 70%);
+            top: -10%;
+            left: -10%;
+            animation-duration: 25s;
+        }
+        .bg-blob-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(159, 176, 214, 0.12), transparent 70%);
+            bottom: -5%;
+            right: -5%;
+            animation-duration: 30s;
+            animation-delay: -5s;
+        }
+        .bg-blob-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(196, 199, 201, 0.08), transparent 70%);
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-duration: 22s;
+            animation-delay: -10s;
+        }
+        @keyframes blobDrift {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(60px, -40px) scale(1.1); }
+            66% { transform: translate(-30px, 50px) scale(0.9); }
+            100% { transform: translate(40px, -20px) scale(1.05); }
+        }
+
+        /* ===== Grid Background ===== */
+        .bg-grid-container {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+            overflow: hidden;
+        }
+        .bg-grid-container svg {
+            width: 100%;
+            height: 100%;
+        }
+        .bg-grid-container .dot {
+            fill: rgba(195, 198, 211, 0.25);
+            animation: gridPulse 4s infinite ease-in-out alternate;
+        }
+        .bg-grid-container .dot:nth-child(odd) { animation-delay: 0.5s; }
+        .bg-grid-container .dot:nth-child(3n) { animation-delay: 1s; }
+        .bg-grid-container .dot:nth-child(5n+2) { animation-delay: 1.5s; }
+        @keyframes gridPulse {
+            0% { opacity: 0.2; transform: scale(0.8); }
+            100% { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        /* ===== Logo Watermark ===== */
+        .logo-watermark {
+            position: fixed;
+            bottom: -60px;
+            right: -60px;
+            z-index: 0;
+            opacity: 0.04;
+            pointer-events: none;
+            user-select: none;
+            font-size: 300px;
+            line-height: 1;
+            transform: rotate(-8deg);
+        }
+        .logo-watermark img {
+            width: 400px;
+            height: auto;
+            opacity: 0.3;
+        }
+        @media (max-width: 768px) {
+            .logo-watermark {
+                bottom: -40px;
+                right: -40px;
+                font-size: 180px;
+            }
+            .logo-watermark img { width: 240px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .bg-blob { animation: none; }
+            .bg-grid-container .dot { animation: none; }
+        }
+
+        /* ===== Glassmorphism ===== */
+        .glass-panel {
+            background: rgba(23, 25, 33, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* ===== Scroll ===== */
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== Side Nav Active ===== */
+        .side-nav-link.active {
+            color: #c3c6d3;
+            border-left-color: #c3c6d3;
+            background: rgba(195, 198, 211, 0.05);
+        }
+
+        /* ===== Skeleton Loading ===== */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        .skeleton {
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0.03) 0%, 
+                rgba(255,255,255,0.08) 20%, 
+                rgba(255,255,255,0.03) 40%);
+            background-size: 1000px 100%;
+            animation: shimmer 2s infinite linear;
+            border-radius: 0.5rem;
+        }
+        #content-loading { display: flex; }
+        #content-area.loaded ~ #content-loading,
+        #content-loading.hidden { display: none; }
+
+        /* ===== Custom Cursor ===== */
+        .cursor-dot {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: #c3c6d3;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.15s ease, height 0.15s ease, opacity 0.15s ease;
+            will-change: transform, left, top;
+            mix-blend-mode: difference;
+        }
+        .cursor-ring {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid rgba(195, 198, 211, 0.4);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+            will-change: transform, left, top;
+        }
+        .cursor-dot.hover {
+            width: 12px;
+            height: 12px;
+            background: #9fb0d6;
+        }
+        .cursor-ring.hover {
+            width: 56px;
+            height: 56px;
+            border-color: rgba(159, 176, 214, 0.6);
+            border-width: 2px;
+        }
+        @media (hover:hover) and (pointer:fine) {
+            .cursor-dot, .cursor-ring { display: block; }
+        }
+        @media (hover:none), (pointer:coarse) {
+            .cursor-dot, .cursor-ring { display: none !important; }
+        }
+
+        /* ===== Header Hide on Scroll ===== */
+        .header-hidden {
+            transform: translateY(-100%) !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            transition: transform 0.3s ease, opacity 0.3s ease !important;
+        }
+</style>
+<!-- Include Supabase config -->
+<script src="supabase-config.js"></script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen smooth-scroll relative overflow-x-hidden">
+
+<!-- ===== Ambient Background ===== -->
+<div class="bg-ambient">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+</div>
+
+<!-- ===== Grid Background ===== -->
+<div class="bg-grid-container" aria-hidden="true">
+    <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <pattern id="dotGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle class="dot" cx="20" cy="20" r="2" />
+            </pattern>
+        </defs>
+        <rect width="1000" height="1000" fill="url(#dotGrid)" />
+    </svg>
+</div>
+
+<!-- ===== Logo Watermark ===== -->
+<div class="logo-watermark" aria-hidden="true">
+    <img src="https://wvbcqgnhdltodoupblbg.supabase.co/storage/v1/object/public/Kerols%20Hany%20cv/logo.png" alt="logo watermark" />
+</div>
+
+<!-- ===== Custom Cursor ===== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===== TopNavBar ===== -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 max-w-container-max mx-auto bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300" id="main-header">
+<a href="./index.html" class="hover:opacity-80 transition-opacity">
+    <img src="assets/White logo.png" alt="Kerols Hany Logo" class="h-14 w-auto scale-150" id="header-logo-img" />
+</a>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="./index.html">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="./index.html#about">About</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="./index.html#skills">Skills</a>
+<a class="font-label-sm text-label-sm text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary hover:text-primary transition-colors duration-300" href="./index.html#projects">Projects</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="./index.html#certificates">Certificates</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="./index.html#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 rounded-lg hover:bg-white/5 transition-colors" aria-label="Toggle menu">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+<a class="font-label-sm text-label-sm text-on-primary bg-primary hover:bg-primary-fixed-dim px-4 py-2 rounded-lg transition-colors duration-300 ml-4 shadow-[0_0_20px_rgba(195,198,211,0.1)]" href="https://wvbcqgnhdltodoupblbg.supabase.co/storage/v1/object/public/Kerols%20Hany%20cv/Kerols_Hany_CV.pdf" target="_blank" id="cv-download-btn">Download CV</a>
+</div>
+</header>
+
+<!-- ===== Mobile Menu ===== -->
+<div id="mobile-menu" class="fixed top-[72px] left-0 w-full z-40 bg-surface/95 backdrop-blur-xl border-b border-white/5 hidden transition-all duration-300 md:hidden">
+    <nav class="flex flex-col items-center gap-2 py-6 px-4">
+        <a class="w-full text-center font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-white/5 py-3 rounded-lg transition-colors" href="./index.html">Home</a>
+        <a class="w-full text-center font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-white/5 py-3 rounded-lg transition-colors" href="./index.html#about">About</a>
+        <a class="w-full text-center font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-white/5 py-3 rounded-lg transition-colors" href="./index.html#skills">Skills</a>
+        <a class="w-full text-center font-body-md text-body-md text-primary font-bold hover:bg-white/5 py-3 rounded-lg transition-colors" href="./index.html#projects">Projects</a>
+        <a class="w-full text-center font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-white/5 py-3 rounded-lg transition-colors" href="./index.html#certificates">Certificates</a>
+        <a class="w-full text-center font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-white/5 py-3 rounded-lg transition-colors" href="./index.html#contact">Contact</a>
+    </nav>
+</div>
+
+<!-- ===== Main Layout Grid ===== -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-8 pt-[120px] pb-32 grid grid-cols-1 lg:grid-cols-12 gap-gutter relative">
+
+<!-- Sticky Side Nav (Compact version) -->
+<aside class="hidden lg:block lg:col-span-3">
+<div class="sticky top-[120px] glass-panel rounded-xl p-4">
+<h3 class="text-[11px] font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-4">Case Study Contents</h3>
+<nav class="flex flex-col gap-1">
+<a class="side-nav-link active block py-1.5 px-3 border-l-2 border-transparent text-[13px] text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md rounded-r" href="#overview">Overview</a>
+<a class="side-nav-link block py-1.5 px-3 border-l-2 border-transparent text-[13px] text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md rounded-r" href="#problem-solution">Problem &amp; Solution</a>
+<a class="side-nav-link block py-1.5 px-3 border-l-2 border-transparent text-[13px] text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md rounded-r" href="#architecture">Architecture</a>
+<a class="side-nav-link block py-1.5 px-3 border-l-2 border-transparent text-[13px] text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md rounded-r" href="#features">Key Features</a>
+<a class="side-nav-link block py-1.5 px-3 border-l-2 border-transparent text-[13px] text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all font-body-md rounded-r" href="#app-demo">App in Action</a>
+</nav>
+</div>
+</aside>
+
+<!-- Content Area -->
+<div class="lg:col-span-9 flex flex-col gap-12" id="content-loading">
+    <div class="flex flex-col gap-4">
+        <div class="skeleton h-6 w-32 rounded-full"></div>
+        <div class="skeleton h-12 w-3/4 rounded-lg"></div>
+        <div class="skeleton h-4 w-full rounded-lg"></div>
+        <div class="skeleton h-4 w-2/3 rounded-lg"></div>
+    </div>
+    <div class="flex gap-4">
+        <div class="skeleton h-12 w-32 rounded-lg"></div>
+        <div class="skeleton h-12 w-32 rounded-lg"></div>
+    </div>
+    <div class="skeleton w-full h-[400px] md:h-[600px] rounded-xl"></div>
+    <div class="flex flex-col gap-4">
+        <div class="skeleton h-8 w-48 rounded-lg"></div>
+        <div class="skeleton w-full h-32 rounded-xl"></div>
+    </div>
+</div>
+
+<div class="lg:col-span-9 flex flex-col gap-32 hidden" id="content-area">
+<!-- Hero Section -->
+<section class="flex flex-col gap-8" id="hero">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-2" id="project-tag-container">
+<!-- Dynamic tag badge will be inserted here by JS -->
+</div>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-surface" id="project-title">FinTech Wallet App</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-4" id="project-short-desc">A high-performance, secure digital wallet application built with Flutter, focusing on seamless transactions and intuitive financial management.</p>
+</div>
+<div class="flex flex-wrap gap-4" id="project-buttons">
+<a class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:bg-primary-fixed-dim transition-colors shadow-[0_0_20px_rgba(195,198,211,0.1)]" id="project-live-btn" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">open_in_new</span>
+                        Live App
+                    </a>
+<a class="flex items-center gap-2 px-6 py-3 border border-white/10 text-on-surface rounded-lg font-label-sm text-label-sm hover:bg-white/5 transition-colors" id="project-source-btn" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">code</span>
+                        View Source
+                    </a>
+</div>
+<!-- Hero image container with dynamic aspect-ratio -->
+<div class="w-full glass-panel rounded-xl overflow-hidden mt-8 relative group border border-outline/20 bg-black/20" id="hero-image-frame" style="aspect-ratio: 16/9;">
+<div class="absolute inset-0 bg-contain bg-no-repeat bg-center w-full h-full group-hover:scale-105 transition-transform duration-700" id="project-hero-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDt3Fbg-UYiaub0VPPj_WSBMEcJ_PIAWOmoGMP4eNV6lid0AjHtMVwpcRnqjFaZPhQEan1ajNbi5rBBqpFKrcKdDxCxOh09UjyadJImICV2ia1GA9Kx-N35XzskMKLab4TIXv0hAbiGs9S6ZKCPLxOJJCPO-bdhZiWKyjovt6YwckF7qzQ_4xswm_fK2mYOkRqACDG1BzOmnLCTZAc2DNFYG1y6Qhnd5I2cz_ftHeHwCMLuWI32MCWZLCrZlMVvsbAGipUo1cf5wD1')"></div>
+</div>
+</section>
+<!-- Overview -->
+<section class="flex flex-col gap-4 pt-8" id="overview">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+                    Overview
+                </h2>
+<div class="glass-panel p-8 rounded-xl border border-outline/20 bg-surface-container">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="project-overview">
+                        This project represents a complete reimagining of the personal finance experience. Built to handle complex transactional data in real-time, the application leverages Flutter's high-performance rendering engine to deliver smooth, 60fps animations even when parsing extensive transaction histories. The core objective was to create a digital wallet that feels as responsive and secure as a native banking application while maintaining a unified codebase across iOS and Android platforms.
+                    </p>
+</div>
+</section>
+<!-- Problem & Solution -->
+<section class="grid md:grid-cols-2 gap-gutter pt-8" id="problem-solution">
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-2 border-t-2 border-t-error/50 border border-outline/20 bg-surface-container">
+<h3 class="font-headline-lg-mobile text-[24px] text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-error">warning</span>
+                        The Problem
+                    </h3>
+<p class="font-body-md text-body-md text-on-surface-variant" id="project-problem">
+                        Existing financial apps often suffer from bloated, slow interfaces and state management that becomes unwieldy as transaction volume grows. Users reported frustration with lagging dashboards and unclear data representations during peak usage periods.
+                    </p>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-2 border-t-2 border-t-secondary/50 border border-outline/20 bg-surface-container">
+<h3 class="font-headline-lg-mobile text-[24px] text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">lightbulb</span>
+                        The Solution
+                    </h3>
+<p class="font-body-md text-body-md text-on-surface-variant" id="project-solution">
+                        By implementing a strict Clean Architecture pattern and utilizing Bloc for predictable state management, we isolated the UI from business logic. This allowed for aggressive caching strategies and optimized rendering, resulting in a 40% reduction in time-to-interactive on launch.
+                    </p>
+</div>
+</section>
+<!-- Architecture -->
+<section class="flex flex-col gap-4 pt-8" id="architecture">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">architecture</span>
+                    Architecture &amp; Tech Stack
+                </h2>
+<div class="grid md:grid-cols-3 gap-gutter">
+<div class="glass-panel p-6 rounded-xl border border-outline/20 bg-surface-container flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">layers</span>
+</div>
+<h4 class="font-headline-lg-mobile text-[20px] text-on-surface">Clean Architecture</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Strict separation of concerns across Presentation, Domain, and Data layers for maximum maintainability.</p>
+</div>
+<div class="glass-panel p-6 rounded-xl border border-outline/20 bg-surface-container flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">account_tree</span>
+</div>
+<h4 class="font-headline-lg-mobile text-[20px] text-on-surface">BLoC Pattern</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Predictable state management using flutter_bloc to handle complex asynchronous data flows seamlessly.</p>
+</div>
+<div class="glass-panel p-6 rounded-xl border border-outline/20 bg-surface-container flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">database</span>
+</div>
+<h4 class="font-headline-lg-mobile text-[20px] text-on-surface">Local First</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Robust offline-first architecture utilizing Hive for rapid local caching of transaction data.</p>
+</div>
+</div>
+</section>
+<!-- Key Features -->
+<section class="flex flex-col gap-4 pt-8" id="features">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">featured_play_list</span>
+                    Key Features
+                </h2>
+<div class="glass-panel p-8 rounded-xl border border-outline/20 bg-surface-container">
+<ul class="flex flex-col gap-6" id="project-features-list">
+<!-- Built dynamically from project.features -->
+</ul>
+</div>
+</section>
+
+<!-- ========== App in Action (exactly as user requested) ========== -->
+<section class="flex flex-col gap-4 pt-8" id="app-demo">
+    <h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary">play_circle</span>
+        App in Action
+    </h2>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl -mt-2 mb-4">
+        A closer look at the core user flows and interactions.
+    </p>
+
+    <!-- Main Featured Demo (Device Mockup) -->
+    <div class="glass-panel p-8 md:p-12 rounded-xl border border-outline/20 bg-surface-container flex flex-col items-center gap-6">
+        <div class="relative w-full max-w-[280px]">
+            <!-- Phone frame -->
+            <div class="relative rounded-[2.5rem] border-[8px] border-surface-container-highest bg-surface-container-highest shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden aspect-[9/19.5] bg-black/30">
+                <!-- Notch -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-surface-container-highest rounded-b-2xl z-20"></div>
+                <!-- Dynamic content: video or image -->
+                <div id="project-demo-content" class="absolute inset-0 w-full h-full bg-contain bg-no-repeat bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDt3Fbg-UYiaub0VPPj_WSBMEcJ_PIAWOmoGMP4eNV6lid0AjHtMVwpcRnqjFaZPhQEan1ajNbi5rBBqpFKrcKdDxCxOh09UjyadJImICV2ia1GA9Kx-N35XzskMKLab4TIXv0hAbiGs9S6ZKCPLxOJJCPO-bdhZiWKyjovt6YwckF7qzQ_4xswm_fK2mYOkRqACDG1BzOmnLCTZAc2DNFYG1y6Qhnd5I2cz_ftHeHwCMLuWI32MCWZLCrZlMVvsbAGipUo1cf5wD1'); display: none;"></div>
+                <!-- Video placeholder -->
+                <video id="project-demo-video" class="absolute inset-0 w-full h-full object-contain hidden" autoplay loop muted playsinline style="display: none;"></video>
+                <!-- YouTube iframe (src is set dynamically by JS) -->
+                <iframe id="project-demo-youtube" class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="" style="display: none;"></iframe>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full">
+            <span class="w-2 h-2 rounded-full bg-secondary"></span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Recorded Demo — Backend Offline</span>
+        </div>
+    </div>
+
+    <!-- Secondary Screens Grid -->
+    <div id="project-screenshots-container">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2" id="project-screenshots-grid">
+            <!-- Built dynamically from project.screenshots -->
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="glass-panel p-12 rounded-xl text-center relative overflow-hidden mt-16 flex flex-col items-center gap-8 border-primary/20 bg-surface-container">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 pointer-events-none"></div>
+<h2 class="font-display-lg text-headline-lg md:text-headline-lg text-on-surface z-10">Ready to build something similar?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl z-10">Let's discuss how we can engineer a high-performance application for your next project.</p>
+<a class="px-8 py-4 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:bg-primary-fixed-dim transition-colors shadow-[0_0_30px_rgba(195,198,211,0.15)] z-10" href="./index.html#contact">
+                    Start a Conversation
+                </a>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-4 bg-surface dark:bg-surface border-t border-white/5 transition-all duration-300">
+<div class="font-display-lg text-body-md font-bold text-on-surface">Kerols.dev</div>
+<p class="font-body-md text-body-md text-on-surface-variant" id="footer-copyright">© 2026 Kerols Hany. Mobile App Developer.</p>
+<nav class="flex items-center gap-gutter">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="https://github.com/kerols16/" id="footer-github-link">Github</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="https://www.linkedin.com/in/kerolshany" id="footer-linkedin-link">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#" id="back-to-top-link">Back to Top</a>
+</nav>
+</footer>
+
+<!-- ===== JavaScript: Custom Cursor ===== -->
+<script>
+    (function initCustomCursor() {
+        const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        if (isTouch) return;
+
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        if (!dot || !ring) return;
+
+        let mouseX = -1000, mouseY = -1000;
+        let ringX = -1000, ringY = -1000;
+        let isHovering = false;
+
+        const onMouseMove = (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            dot.style.left = mouseX + 'px';
+            dot.style.top = mouseY + 'px';
+        };
+
+        const onMouseEnterLink = () => {
+            isHovering = true;
+            dot.classList.add('hover');
+            ring.classList.add('hover');
+        };
+        const onMouseLeaveLink = () => {
+            isHovering = false;
+            dot.classList.remove('hover');
+            ring.classList.remove('hover');
+        };
+
+        document.addEventListener('mousemove', onMouseMove);
+
+        // Hover effects on interactive elements
+        const interactive = 'a, button, .cursor-hover, input, textarea, select, [role="button"]';
+        document.addEventListener('mouseover', (e) => {
+            const target = e.target.closest(interactive);
+            if (target) onMouseEnterLink();
+        });
+        document.addEventListener('mouseout', (e) => {
+            const target = e.target.closest(interactive);
+            if (target) onMouseLeaveLink();
+        });
+
+        // Smooth ring follow
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+            ring.style.left = ringX + 'px';
+            ring.style.top = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', () => {
+            dot.style.opacity = '0';
+            ring.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', () => {
+            dot.style.opacity = '1';
+            ring.style.opacity = '1';
+        });
+    })();
+</script>
+
+<!-- ===== Main JavaScript ===== -->
+<script>
+        // ============================================================
+        // Helper: Dynamic aspect-ratio based on image/video dimensions
+        // ============================================================
+        function setDynamicAspectRatio(containerEl, imageUrl) {
+            if (!containerEl || !imageUrl) return;
+            const img = new Image();
+            img.onload = () => {
+                if (img.naturalWidth && img.naturalHeight) {
+                    containerEl.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+                }
+            };
+            img.src = imageUrl;
+        }
+
+        // ============================================================
+        // Color map for project tags (matches index.html)
+        // ============================================================
+        const colorMap = {
+            primary: 'bg-primary/10 text-primary border-primary/20',
+            tertiary: 'bg-tertiary/10 text-tertiary border-tertiary/20',
+            green: 'bg-green-500/10 text-green-500 border-green-500/20',
+            orange: 'bg-orange-500/10 text-orange-500 border-orange-500/20',
+        };
+
+        // ============================================================
+        // Show "Project Not Found" state
+        // ============================================================
+        function showNotFound() {
+            document.getElementById('content-loading').classList.add('hidden');
+            document.getElementById('content-area').classList.remove('hidden');
+
+            const contentArea = document.getElementById('content-area');
+            contentArea.innerHTML = `
+                <section class="flex flex-col items-center justify-center min-h-[60vh] text-center gap-6">
+                    <span class="material-symbols-outlined text-7xl text-on-surface-variant/50">folder_off</span>
+                    <h2 class="font-display-lg text-headline-lg text-on-surface">Project Not Found</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                        We couldn't find a project with the provided identifier. It may have been removed or the link might be incorrect.
+                    </p>
+                    <a href="./index.html#projects" class="px-6 py-3 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:bg-primary-fixed-dim transition-colors shadow-[0_0_20px_rgba(195,198,211,0.1)]">
+                        ← Back to Projects
+                    </a>
+                </section>
+            `;
+            document.getElementById('page-title').textContent = 'Project Not Found | Kerols Hany';
+            // Also update SEO meta tags for not-found state
+            document.querySelector('meta[name="description"]').setAttribute('content', 'Project not found.');
+            document.querySelector('meta[property="og:title"]').setAttribute('content', 'Project Not Found | Kerols Hany');
+            document.querySelector('meta[property="og:description"]').setAttribute('content', 'The requested project could not be found.');
+        }
+
+        // ============================================================
+        // Populate page with project data
+        // ============================================================
+        function populateProject(project) {
+            document.getElementById('page-title').textContent = `${project.title} | Kerols Hany`;
+
+            // ---- SEO Meta Tags ----
+            const desc = project.short_desc || project.overview || '';
+            document.querySelector('meta[name="description"]').setAttribute('content', desc);
+            document.querySelector('meta[property="og:title"]').setAttribute('content', `${project.title} | Kerols Hany`);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', desc);
+            if (project.hero_image && project.hero_image.trim() !== '') {
+                document.querySelector('meta[property="og:image"]').setAttribute('content', project.hero_image);
+            }
+
+            // ---- Hero: Tag badge ----
+            const tagContainer = document.getElementById('project-tag-container');
+            const colorClass = colorMap[project.tag_color] || colorMap.primary;
+            tagContainer.innerHTML = `
+                <span class="px-3 py-1 rounded-full text-xs font-medium ${colorClass}">${project.tag}</span>
+            `;
+
+            document.getElementById('project-title').textContent = project.title;
+            document.getElementById('project-short-desc').textContent = project.short_desc;
+
+            // ---- Hero: Buttons ----
+            const liveBtn = document.getElementById('project-live-btn');
+            const sourceBtn = document.getElementById('project-source-btn');
+
+            if (project.live_url && project.live_url !== '#' && project.live_url.trim() !== '') {
+                liveBtn.href = project.live_url;
+                liveBtn.style.display = 'flex';
+            } else {
+                liveBtn.style.display = 'none';
+            }
+
+            if (project.source_url && project.source_url !== '#' && project.source_url.trim() !== '') {
+                sourceBtn.href = project.source_url;
+                sourceBtn.style.display = 'flex';
+            } else {
+                sourceBtn.style.display = 'none';
+            }
+
+            // ---- Hero: Image + Dynamic Aspect Ratio ----
+            const heroFrame = document.getElementById('hero-image-frame');
+            const heroImage = document.getElementById('project-hero-image');
+            if (project.hero_image && project.hero_image.trim() !== '') {
+                heroImage.style.backgroundImage = `url('${project.hero_image}')`;
+                setDynamicAspectRatio(heroFrame, project.hero_image);
+            }
+
+            document.getElementById('project-overview').textContent = project.overview;
+            document.getElementById('project-problem').textContent = project.problem;
+            document.getElementById('project-solution').textContent = project.solution;
+
+            // ---- Features ----
+            const featuresList = document.getElementById('project-features-list');
+            featuresList.innerHTML = '';
+            if (project.features && Array.isArray(project.features) && project.features.length > 0) {
+                project.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start gap-4';
+                    li.innerHTML = `
+                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                        <div>
+                            <h4 class="font-headline-lg-mobile text-[20px] text-on-surface mb-2">${feature.title}</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">${feature.desc}</p>
+                        </div>
+                    `;
+                    featuresList.appendChild(li);
+                });
+            } else {
+                featuresList.innerHTML = `
+                    <li class="text-on-surface-variant text-body-md">No features listed for this project.</li>
+                `;
+            }
+
+            // ---- App in Action: Demo (video, YouTube, or image) ----
+            const demoContent = document.getElementById('project-demo-content');
+            const demoVideo = document.getElementById('project-demo-video');
+            const demoYoutube = document.getElementById('project-demo-youtube');
+
+            function extractYouTubeId(url) {
+                const patterns = [
+                    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/
+                ];
+                for (const pattern of patterns) {
+                    const match = url.match(pattern);
+                    if (match) return match[1];
+                }
+                return null;
+            }
+
+            // Hide all three by default
+            demoContent.style.display = 'none';
+            demoVideo.classList.add('hidden');
+            demoVideo.style.display = 'none';
+            demoYoutube.classList.add('hidden');
+            demoYoutube.style.display = 'none';
+            demoYoutube.src = '';
+
+            if (project.demo_video_url && project.demo_video_url.trim() !== '') {
+                const youtubeId = extractYouTubeId(project.demo_video_url);
+                if (youtubeId) {
+                    demoYoutube.classList.remove('hidden');
+                    demoYoutube.style.display = 'block';
+                    demoYoutube.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&loop=1&playlist=${youtubeId}&controls=1&modestbranding=1&rel=0`;
+                } else {
+                    demoVideo.classList.remove('hidden');
+                    demoVideo.style.display = 'block';
+                    demoVideo.innerHTML = `<source src="${project.demo_video_url}" type="video/mp4">`;
+                    demoVideo.load();
+                }
+            } else {
+                demoContent.style.display = 'block';
+                if (project.hero_image && project.hero_image.trim() !== '') {
+                    demoContent.style.backgroundImage = `url('${project.hero_image}')`;
+                }
+            }
+
+            // ---- App in Action: Screenshots grid with dynamic aspect ratio ----
+            const screenshotsContainer = document.getElementById('project-screenshots-container');
+            const screenshotsGrid = document.getElementById('project-screenshots-grid');
+
+            if (project.screenshots && Array.isArray(project.screenshots) && project.screenshots.length > 0) {
+                screenshotsContainer.style.display = 'block';
+                screenshotsGrid.innerHTML = '';
+                const shots = project.screenshots.slice(0, 4);
+                shots.forEach(url => {
+                    const div = document.createElement('div');
+                    div.className = 'glass-panel rounded-xl overflow-hidden border border-outline/20 bg-surface-container relative group cursor-pointer';
+                    div.innerHTML = `<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" style="background-image: url('${url}')"></div>`;
+                    setDynamicAspectRatio(div, url);
+                    screenshotsGrid.appendChild(div);
+                });
+                const remaining = 4 - shots.length;
+                for (let i = 0; i < remaining; i++) {
+                    const div = document.createElement('div');
+                    div.className = 'glass-panel rounded-xl overflow-hidden border border-outline/20 bg-surface-container relative group cursor-pointer flex items-center justify-center';
+                    div.style.aspectRatio = '9 / 16';
+                    div.innerHTML = `
+                        <span class="text-on-surface-variant/30 text-sm">Screenshot</span>
+                    `;
+                    screenshotsGrid.appendChild(div);
+                }
+            } else {
+                screenshotsContainer.style.display = 'none';
+            }
+
+            document.getElementById('content-loading').classList.add('hidden');
+            document.getElementById('content-area').classList.remove('hidden');
+        }
+
+        // ============================================================
+        // Apply site content from site_content table
+        // ============================================================
+        function applySiteContent(rows) {
+            if (!rows || !Array.isArray(rows) || rows.length === 0) return;
+
+            const content = {};
+            rows.forEach(row => {
+                if (row.key && row.value !== undefined) {
+                    content[row.key] = row.value;
+                }
+            });
+
+            // Header logo
+            const headerLogo = document.getElementById('header-logo-img');
+            if (headerLogo && content.header_logo_url) {
+                headerLogo.src = content.header_logo_url;
+            }
+
+            // Watermark logo
+            const watermarkImg = document.querySelector('.logo-watermark img');
+            if (watermarkImg && content.logo_url) {
+                watermarkImg.src = content.logo_url;
+            }
+
+            // CV download button
+            const cvBtn = document.getElementById('cv-download-btn');
+            if (cvBtn && content.cv_url) {
+                cvBtn.href = content.cv_url;
+            }
+
+            // Footer GitHub link
+            const githubLink = document.getElementById('footer-github-link');
+            if (githubLink && content.github_url) {
+                githubLink.href = content.github_url;
+            }
+
+            // Footer LinkedIn link
+            const linkedinLink = document.getElementById('footer-linkedin-link');
+            if (linkedinLink && content.linkedin_url) {
+                linkedinLink.href = content.linkedin_url;
+            }
+
+            // Footer copyright text
+            const footerText = document.getElementById('footer-copyright');
+            if (footerText && content.footer_text) {
+                footerText.textContent = content.footer_text;
+            }
+        }
+
+        // ============================================================
+        // Main: read slug, fetch site_content + project in parallel
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('slug');
+
+            // Fetch site_content and project in parallel, each with its own error handling
+            const [siteRows, projectRows] = await Promise.all([
+                fetchFromSupabase('site_content', 'select=*').catch(() => []),
+                slug ? fetchFromSupabase('projects', `select=*&slug=eq.${slug}`).catch(() => []) : Promise.resolve([])
+            ]);
+
+            // Apply site content (silent fallback if empty)
+            if (siteRows && siteRows.length > 0) {
+                applySiteContent(siteRows);
+            }
+
+            // Handle project data
+            if (slug && projectRows && projectRows.length > 0) {
+                populateProject(projectRows[0]);
+            } else {
+                showNotFound();
+            }
+        });
+
+        // ============================================================
+        // Mobile Menu Toggle
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = mobileMenuBtn?.querySelector('.material-symbols-outlined');
+
+            if (!mobileMenuBtn || !mobileMenu || !menuIcon) return;
+
+            function toggleMenu() {
+                const isOpen = mobileMenu.classList.toggle('hidden');
+                menuIcon.textContent = isOpen ? 'menu' : 'close';
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.textContent = 'menu';
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    const isClickInside = mobileMenu.contains(e.target) || mobileMenuBtn.contains(e.target);
+                    if (!isClickInside) {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.textContent = 'menu';
+                    }
+                }
+            });
+        });
+
+        // ============================================================
+        // Header Hide/Show on Scroll
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            if (!header) return;
+
+            let lastScrollY = window.scrollY;
+            let isHeaderHidden = false;
+
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > 80) {
+                    if (currentScrollY > lastScrollY && !isHeaderHidden) {
+                        // Scrolling down → hide header
+                        header.classList.add('header-hidden');
+                        isHeaderHidden = true;
+                    } else if (currentScrollY < lastScrollY && isHeaderHidden) {
+                        // Scrolling up → show header
+                        header.classList.remove('header-hidden');
+                        isHeaderHidden = false;
+                    }
+                } else {
+                    // Near top → always show
+                    if (isHeaderHidden) {
+                        header.classList.remove('header-hidden');
+                        isHeaderHidden = false;
+                    }
+                }
+
+                lastScrollY = currentScrollY;
+            });
+        });
+
+        // ============================================================
+        // Scroll spy for side navigation (improved accuracy)
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.side-nav-link');
+
+            function updateActiveLink() {
+                let currentSection = null;
+                let maxVisibleRatio = 0;
+                const viewportHeight = window.innerHeight;
+
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const visibleTop = Math.max(rect.top, 0);
+                    const visibleBottom = Math.min(rect.bottom, viewportHeight);
+                    const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+                    const visibleRatio = visibleHeight / Math.min(rect.height, viewportHeight);
+
+                    // Give priority to sections near the top third of the viewport
+                    const distanceFromTop = Math.abs(rect.top - viewportHeight * 0.15);
+                    const score = visibleRatio - (distanceFromTop / viewportHeight) * 0.3;
+
+                    if (rect.top < viewportHeight * 0.5 && rect.bottom > 0 && score > maxVisibleRatio) {
+                        maxVisibleRatio = score;
+                        currentSection = section;
+                    }
+                });
+
+                if (currentSection) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === currentSection.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            }
+
+            let scrollSpyTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!scrollSpyTicking) {
+                    requestAnimationFrame(() => {
+                        updateActiveLink();
+                        scrollSpyTicking = false;
+                    });
+                    scrollSpyTicking = true;
+                }
+            }, { passive: true });
+
+            // Run once on load
+            updateActiveLink();
+        });
+
+        // ============================================================
+        // "Back to Top" smooth scroll (Issue 3)
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const backLink = document.getElementById('back-to-top-link');
+            if (backLink) {
+                backLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+
+</body></html>
