@@ -1471,6 +1471,10 @@
     <!-- ===== Dynamic content loaders (Supabase) ===== -->
     <script type="module">
         import { fetchFromSupabase } from './supabase-config.js';
+        import { inject } from '@vercel/analytics';
+
+    inject();
+
 
         /* ── Render Projects ── */
         (async function renderProjects() {

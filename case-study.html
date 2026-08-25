@@ -674,6 +674,10 @@
 <!-- ===== Main JavaScript (now an ES Module) ===== -->
 <script type="module">
     import { fetchFromSupabase } from './supabase-config.js';
+    import { inject } from '@vercel/analytics';
+
+    inject();
+
 
         // ============================================================
         // Helper: Dynamic aspect-ratio based on image/video dimensions
