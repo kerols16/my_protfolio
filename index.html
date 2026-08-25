@@ -817,6 +817,132 @@
                 animation: none;
             }
         }
+
+        /* ── Styles added from second file for Experience Marquee ── */
+        .experience-marquee-section {
+            overflow: hidden;
+            padding: 1rem 0;
+            position: relative;
+        }
+
+        .experience-marquee-section::before,
+        .experience-marquee-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 120px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .experience-marquee-section::before {
+            left: 0;
+            background: linear-gradient(to right, #111319, transparent);
+        }
+
+        .experience-marquee-section::after {
+            right: 0;
+            background: linear-gradient(to left, #111319, transparent);
+        }
+
+        .experience-marquee-track {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            animation: experienceMarqueeScroll 35s linear infinite;
+        }
+
+        .experience-marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes experienceMarqueeScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .experience-marquee-track {
+                animation: none;
+            }
+        }
+
+        .experience-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: rgba(30, 31, 37, 0.5);
+            border: 1px solid rgba(195, 198, 211, 0.08);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            backdrop-filter: blur(8px);
+        }
+
+        .experience-item:hover {
+            border-color: rgba(195, 198, 211, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .experience-item img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+            filter: brightness(0.9);
+            transition: filter 0.3s;
+            flex-shrink: 0;
+        }
+
+        .experience-item:hover img {
+            filter: brightness(1.1);
+        }
+
+        .experience-item .experience-icon {
+            width: 48px;
+            height: 48px;
+            color: #c3c6d3;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 6px rgba(195, 198, 211, 0.2));
+        }
+
+        .experience-item .experience-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .experience-item .experience-title {
+            font-weight: 700;
+            color: #e2e2e9;
+            font-size: 1rem;
+            line-height: 1.3;
+            white-space: nowrap;
+        }
+
+        .experience-item .experience-subtitle {
+            font-size: 0.875rem;
+            color: rgba(226, 226, 233, 0.75);
+            font-family: 'JetBrains Mono', monospace;
+            white-space: nowrap;
+        }
+
+        .experience-item .experience-date {
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: rgba(226, 226, 233, 0.55);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.2rem 0.8rem;
+            border-radius: 9999px;
+            width: fit-content;
+        }
     </style>
 </head>
 
@@ -1023,17 +1149,28 @@
         </section>
         <!-- END: Projects Section -->
 
-        <!-- BEGIN: Certificates / Experience Section — premium badge cards -->
-        <section class="py-24 px-8 md:px-16 max-w-7xl mx-auto" id="certificates">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold uppercase tracking-wider text-on-surface mb-4 reveal">Experience &amp;
-                    Education
-                </h2>
-                <p class="text-on-surface-variant font-mono max-w-2xl mx-auto reveal reveal-delay-1" id="experience-subtitle">My
-                    professional journey and academic background.</p>
+        <!-- BEGIN: Certificates / Experience Section — REPLACED WITH MARQUEE STYLE FROM SECOND FILE -->
+        <section class="py-24 max-w-full mx-auto" id="certificates">
+            <div class="text-center mb-16 px-8 md:px-16">
+                <p class="text-primary font-mono text-sm tracking-widest uppercase mb-3 reveal">04. Journey</p>
+                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tight text-on-surface mb-4 reveal" style="text-wrap: balance;">Experience &amp; Education</h2>
+                <p class="text-on-surface-variant font-mono max-w-2xl mx-auto reveal reveal-delay-1" id="experience-subtitle">My professional journey and academic background.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="experience-grid">
-                <p class="text-on-surface-variant font-mono col-span-3 text-center">Loading experience…</p>
+            <!-- Skeleton Loading -->
+            <div class="experience-marquee-section" id="experience-skeleton">
+                <div class="experience-marquee-track">
+                    <div class="experience-item skeleton-card"><div class="skeleton w-12 h-12 rounded-full"></div><div class="skeleton h-5 w-32"></div><div class="skeleton h-4 w-48"></div><div class="skeleton h-3 w-24"></div></div>
+                    <div class="experience-item skeleton-card"><div class="skeleton w-12 h-12 rounded-full"></div><div class="skeleton h-5 w-28"></div><div class="skeleton h-4 w-44"></div><div class="skeleton h-3 w-20"></div></div>
+                    <div class="experience-item skeleton-card"><div class="skeleton w-12 h-12 rounded-full"></div><div class="skeleton h-5 w-36"></div><div class="skeleton h-4 w-40"></div><div class="skeleton h-3 w-28"></div></div>
+                    <div class="experience-item skeleton-card"><div class="skeleton w-12 h-12 rounded-full"></div><div class="skeleton h-5 w-32"></div><div class="skeleton h-4 w-48"></div><div class="skeleton h-3 w-24"></div></div>
+                    <div class="experience-item skeleton-card"><div class="skeleton w-12 h-12 rounded-full"></div><div class="skeleton h-5 w-28"></div><div class="skeleton h-4 w-44"></div><div class="skeleton h-3 w-20"></div></div>
+                    <div class="experience-item skeleton-card"><div class="skeleton w-12 h-12 rounded-full"></div><div class="skeleton h-5 w-36"></div><div class="skeleton h-4 w-40"></div><div class="skeleton h-3 w-28"></div></div>
+                </div>
+            </div>
+            <div class="experience-marquee-section hidden" id="experience-grid">
+                <div class="experience-marquee-track" id="experience-marquee-track">
+                    <p class="text-on-surface-variant font-mono text-center">Loading experience...</p>
+                </div>
             </div>
         </section>
         <!-- END: Certificates / Experience Section -->
@@ -1091,250 +1228,250 @@
     </footer>
     <!-- END: Footer -->
 
-    <script src="supabase-config.js">
-    </script>
     <script>
-            (function () {
-                /* ── 1. Header hide/show on scroll ── */
-                const header = document.getElementById('site-header');
-                let lastScroll = 0;
+        (function () {
+            /* ── 1. Header hide/show on scroll ── */
+            const header = document.getElementById('site-header');
+            let lastScroll = 0;
 
-                // Show header immediately on load
-                header.classList.remove('header-hidden');
+            // Show header immediately on load
+            header.classList.remove('header-hidden');
 
-                window.addEventListener('scroll', () => {
-                    const current = window.scrollY;
-                    if (current <= 80) {
-                        header.classList.add('header-hidden');
-                    } else if (current < lastScroll) {
-                        header.classList.remove('header-hidden');
+            window.addEventListener('scroll', () => {
+                const current = window.scrollY;
+                if (current <= 80) {
+                    header.classList.add('header-hidden');
+                } else if (current < lastScroll) {
+                    header.classList.remove('header-hidden');
+                } else {
+                    header.classList.remove('header-hidden');
+                }
+                lastScroll = current <= 0 ? 0 : current;
+            }, { passive: true });
+
+            /* ── 2. Background text alternating animation ── */
+            const phrase1 = document.getElementById('bg-phrase-1');
+            const phrase2 = document.getElementById('bg-phrase-2');
+
+            // Default phrase texts (will be overridden by Supabase if available)
+            const phraseTexts = {
+                1: ['MOBILE APP', 'DEVELOPER'],
+                2: ['KEROLS', 'HANY RAUF']
+            };
+
+            function buildWords(el, lines) {
+                el.innerHTML = '';
+                let wordIndex = 0;
+                lines.forEach((line, lineIdx) => {
+                    const lineWords = line.split(' ');
+                    lineWords.forEach((word, i) => {
+                        const span = document.createElement('span');
+                        span.className = 'word';
+                        span.textContent = word;
+                        span.style.animationDelay = `${wordIndex * 0.15}s`;
+                        el.appendChild(span);
+                        if (i < lineWords.length - 1) el.appendChild(document.createTextNode(' '));
+                        wordIndex++;
+                    });
+                    if (lineIdx < lines.length - 1) el.appendChild(document.createElement('br'));
+                });
+            }
+
+            let showingFirst = true;
+            let intervalId = null;
+
+            function startPhraseRotation() {
+                if (intervalId) clearInterval(intervalId);
+                // Initial build
+                buildWords(phrase1, phraseTexts[1]);
+                phrase1.classList.add('visible');
+                phrase2.classList.remove('visible');
+
+                intervalId = setInterval(() => {
+                    if (showingFirst) {
+                        // Hide phrase 1
+                        phrase1.classList.remove('visible');
+                        setTimeout(() => {
+                            // Build phrase 2 words while hidden
+                            buildWords(phrase2, phraseTexts[2]);
+                            // Show phrase 2
+                            phrase2.classList.add('visible');
+                        }, 400);
                     } else {
-                        header.classList.remove('header-hidden');
+                        // Hide phrase 2
+                        phrase2.classList.remove('visible');
+                        setTimeout(() => {
+                            // Build phrase 1 words while hidden
+                            buildWords(phrase1, phraseTexts[1]);
+                            // Show phrase 1
+                            phrase1.classList.add('visible');
+                        }, 400);
                     }
-                    lastScroll = current <= 0 ? 0 : current;
-                }, { passive: true });
+                    showingFirst = !showingFirst;
+                }, 4200);
+            }
 
-                /* ── 2. Background text alternating animation ── */
-                const phrase1 = document.getElementById('bg-phrase-1');
-                const phrase2 = document.getElementById('bg-phrase-2');
+            startPhraseRotation();
 
-                // Default phrase texts (will be overridden by Supabase if available)
-                const phraseTexts = {
-                    1: ['MOBILE APP', 'DEVELOPER'],
-                    2: ['KEROLS', 'HANY RAUF']
-                };
+            // Expose phraseTexts and buildWords for renderSiteContent to update
+            window.__phraseTexts = phraseTexts;
+            window.__buildWords = buildWords;
+            window.__phrase1 = phrase1;
+            window.__phrase2 = phrase2;
+            window.__startPhraseRotation = startPhraseRotation;
 
-                function buildWords(el, lines) {
-                    el.innerHTML = '';
-                    let wordIndex = 0;
-                    lines.forEach((line, lineIdx) => {
-                        const lineWords = line.split(' ');
-                        lineWords.forEach((word, i) => {
-                            const span = document.createElement('span');
-                            span.className = 'word';
-                            span.textContent = word;
-                            span.style.animationDelay = `${wordIndex * 0.15}s`;
-                            el.appendChild(span);
-                            if (i < lineWords.length - 1) el.appendChild(document.createTextNode(' '));
-                            wordIndex++;
-                        });
-                        if (lineIdx < lines.length - 1) el.appendChild(document.createElement('br'));
-                    });
-                }
+            /* ── 2) Mobile Typing Animation (dynamic) ── */
+            function initMobileTyping(name, title) {
+                const nameEl = document.getElementById('typewriter-name');
+                const titleEl = document.getElementById('typewriter-title');
+                if (!nameEl || !titleEl) return;
 
-                let showingFirst = true;
-                let intervalId = null;
+                // Use provided values or fallback to hardcoded defaults
+                const nameText = name || 'Kerols Hany Rauf';
+                const titleText = title || 'Mobile App Developer';
+                const speed = 70;
+                const pause = 800;
 
-                function startPhraseRotation() {
-                    if (intervalId) clearInterval(intervalId);
-                    // Initial build
-                    buildWords(phrase1, phraseTexts[1]);
-                    phrase1.classList.add('visible');
-                    phrase2.classList.remove('visible');
+                // Clear existing content
+                nameEl.textContent = '';
+                titleEl.textContent = '';
 
-                    intervalId = setInterval(() => {
-                        if (showingFirst) {
-                            // Hide phrase 1
-                            phrase1.classList.remove('visible');
-                            setTimeout(() => {
-                                // Build phrase 2 words while hidden
-                                buildWords(phrase2, phraseTexts[2]);
-                                // Show phrase 2
-                                phrase2.classList.add('visible');
-                            }, 400);
+                // Start typing
+                setTimeout(() => {
+                    let nameIndex = 0;
+                    function typeName() {
+                        if (nameIndex < nameText.length) {
+                            nameEl.textContent += nameText.charAt(nameIndex);
+                            nameIndex++;
+                            setTimeout(typeName, speed);
                         } else {
-                            // Hide phrase 2
-                            phrase2.classList.remove('visible');
+                            // Name done, add cursor
+                            const cursor = document.createElement('span');
+                            cursor.className = 'cursor-blink';
+                            nameEl.appendChild(cursor);
+                            // pause then type title
                             setTimeout(() => {
-                                // Build phrase 1 words while hidden
-                                buildWords(phrase1, phraseTexts[1]);
-                                // Show phrase 1
-                                phrase1.classList.add('visible');
-                            }, 400);
-                        }
-                        showingFirst = !showingFirst;
-                    }, 4200);
-                }
-
-                startPhraseRotation();
-
-                // Expose phraseTexts and buildWords for renderSiteContent to update
-                window.__phraseTexts = phraseTexts;
-                window.__buildWords = buildWords;
-                window.__phrase1 = phrase1;
-                window.__phrase2 = phrase2;
-                window.__startPhraseRotation = startPhraseRotation;
-
-                /* ── 2) Mobile Typing Animation (dynamic) ── */
-                function initMobileTyping(name, title) {
-                    const nameEl = document.getElementById('typewriter-name');
-                    const titleEl = document.getElementById('typewriter-title');
-                    if (!nameEl || !titleEl) return;
-
-                    // Use provided values or fallback to hardcoded defaults
-                    const nameText = name || 'Kerols Hany Rauf';
-                    const titleText = title || 'Mobile App Developer';
-                    const speed = 70;
-                    const pause = 800;
-
-                    // Clear existing content
-                    nameEl.textContent = '';
-                    titleEl.textContent = '';
-
-                    // Start typing
-                    setTimeout(() => {
-                        let nameIndex = 0;
-                        function typeName() {
-                            if (nameIndex < nameText.length) {
-                                nameEl.textContent += nameText.charAt(nameIndex);
-                                nameIndex++;
-                                setTimeout(typeName, speed);
-                            } else {
-                                // Name done, add cursor
-                                const cursor = document.createElement('span');
-                                cursor.className = 'cursor-blink';
-                                nameEl.appendChild(cursor);
-                                // pause then type title
-                                setTimeout(() => {
-                                    // remove cursor from name
-                                    const c = nameEl.querySelector('.cursor-blink');
-                                    if (c) c.remove();
-                                    // start typing title
-                                    let titleIndex = 0;
-                                    function typeTitle() {
-                                        if (titleIndex < titleText.length) {
-                                            titleEl.textContent += titleText.charAt(titleIndex);
-                                            titleIndex++;
-                                            setTimeout(typeTitle, speed);
-                                        } else {
-                                            // add cursor to title
-                                            const tc = document.createElement('span');
-                                            tc.className = 'cursor-blink';
-                                            titleEl.appendChild(tc);
-                                        }
+                                // remove cursor from name
+                                const c = nameEl.querySelector('.cursor-blink');
+                                if (c) c.remove();
+                                // start typing title
+                                let titleIndex = 0;
+                                function typeTitle() {
+                                    if (titleIndex < titleText.length) {
+                                        titleEl.textContent += titleText.charAt(titleIndex);
+                                        titleIndex++;
+                                        setTimeout(typeTitle, speed);
+                                    } else {
+                                        // add cursor to title
+                                        const tc = document.createElement('span');
+                                        tc.className = 'cursor-blink';
+                                        titleEl.appendChild(tc);
                                     }
-                                    typeTitle();
-                                }, pause);
-                            }
+                                }
+                                typeTitle();
+                            }, pause);
                         }
-                        typeName();
-                    }, 300);
-                }
+                    }
+                    typeName();
+                }, 300);
+            }
 
-                // Expose function globally for renderSiteContent
-                window.initMobileTyping = initMobileTyping;
+            // Expose function globally for renderSiteContent
+            window.initMobileTyping = initMobileTyping;
 
-                // Also call it with default values now (will be overridden by Supabase fetch later)
-                // but we want to avoid duplicate typing; we'll call it from renderSiteContent.
-                // The initial call will be done after the fetch, so we skip here.
+            // Also call it with default values now (will be overridden by Supabase fetch later)
+            // but we want to avoid duplicate typing; we'll call it from renderSiteContent.
+            // The initial call will be done after the fetch, so we skip here.
 
-                /* ── 3. Scroll spy: active nav link ── */
-                const sections = document.querySelectorAll('section[id]');
-                const navLinks = document.querySelectorAll('nav a.nav-link');
+            /* ── 3. Scroll spy: active nav link ── */
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a.nav-link');
 
-                function setActive(id) {
-                    navLinks.forEach(link => {
-                        const isActive = link.getAttribute('href') === '#' + id;
-                        link.classList.toggle('active', isActive);
-                    });
-                }
-
-                const spyObserver = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) setActive(entry.target.id);
-                        });
-                    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
-                );
-                sections.forEach(sec => spyObserver.observe(sec));
-
+            function setActive(id) {
                 navLinks.forEach(link => {
+                    const isActive = link.getAttribute('href') === '#' + id;
+                    link.classList.toggle('active', isActive);
+                });
+            }
+
+            const spyObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) setActive(entry.target.id);
+                    });
+                }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+            );
+            sections.forEach(sec => spyObserver.observe(sec));
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    setActive(link.getAttribute('href').substring(1));
+                });
+            });
+
+            /* ── 4. Mobile Hamburger Menu ── */
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+
+            if (hamburgerBtn && mobileMenu) {
+                hamburgerBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = mobileMenu.classList.toggle('open');
+                    // Toggle icon between hamburger and X
+                    if (isOpen) {
+                        hamburgerIcon.innerHTML = `
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            `;
+                    } else {
+                        hamburgerIcon.innerHTML = `
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            `;
+                    }
+                });
+
+                // Close menu when a link is clicked
+                const mobileNavLinks = mobileMenu.querySelectorAll('a');
+                mobileNavLinks.forEach(link => {
                     link.addEventListener('click', () => {
-                        setActive(link.getAttribute('href').substring(1));
+                        mobileMenu.classList.remove('open');
+                        hamburgerIcon.innerHTML = `
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            `;
                     });
                 });
 
-                /* ── 4. Mobile Hamburger Menu ── */
-                const hamburgerBtn = document.getElementById('hamburger-btn');
-                const mobileMenu = document.getElementById('mobile-menu');
-                const hamburgerIcon = document.getElementById('hamburger-icon');
-
-                if (hamburgerBtn && mobileMenu) {
-                    hamburgerBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        const isOpen = mobileMenu.classList.toggle('open');
-                        // Toggle icon between hamburger and X
-                        if (isOpen) {
-                            hamburgerIcon.innerHTML = `
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                            `;
-                        } else {
-                            hamburgerIcon.innerHTML = `
+                // Close menu when clicking outside (optional)
+                document.addEventListener('click', (e) => {
+                    if (mobileMenu.classList.contains('open') &&
+                        !mobileMenu.contains(e.target) &&
+                        !hamburgerBtn.contains(e.target)) {
+                        mobileMenu.classList.remove('open');
+                        hamburgerIcon.innerHTML = `
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                             `;
-                        }
-                    });
+                    }
+                });
+            }
 
-                    // Close menu when a link is clicked
-                    const mobileNavLinks = mobileMenu.querySelectorAll('a');
-                    mobileNavLinks.forEach(link => {
-                        link.addEventListener('click', () => {
-                            mobileMenu.classList.remove('open');
-                            hamburgerIcon.innerHTML = `
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            `;
-                        });
-                    });
-
-                    // Close menu when clicking outside (optional)
-                    document.addEventListener('click', (e) => {
-                        if (mobileMenu.classList.contains('open') &&
-                            !mobileMenu.contains(e.target) &&
-                            !hamburgerBtn.contains(e.target)) {
-                            mobileMenu.classList.remove('open');
-                            hamburgerIcon.innerHTML = `
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            `;
-                        }
-                    });
-                }
-
-                /* ── 5) Scroll Down Indicator ── */
-                const scrollIndicator = document.getElementById('scrollIndicator');
-                if (scrollIndicator) {
-                    let hasScrolled = false;
-                    window.addEventListener('scroll', () => {
-                        if (!hasScrolled && window.scrollY > 50) {
-                            hasScrolled = true;
-                            scrollIndicator.classList.add('hidden');
-                        }
-                    }, { passive: true });
-                }
-            })();
+            /* ── 5) Scroll Down Indicator ── */
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            if (scrollIndicator) {
+                let hasScrolled = false;
+                window.addEventListener('scroll', () => {
+                    if (!hasScrolled && window.scrollY > 50) {
+                        hasScrolled = true;
+                        scrollIndicator.classList.add('hidden');
+                    }
+                }, { passive: true });
+            }
+        })();
     </script>
 
     <!-- ===== Dynamic content loaders (Supabase) ===== -->
-    <script>
+    <script type="module">
+        import { fetchFromSupabase } from './supabase-config.js';
+
         /* ── Render Projects ── */
         (async function renderProjects() {
             const grid = document.getElementById('projects-grid');
@@ -1434,60 +1571,54 @@
             }
         })();
 
-        /* ── Render Experience / Education (Premium Badge Cards) ── */
+        /* ── Render Experience / Education (Marquee Style) ── */
         (async function renderExperience() {
             const grid = document.getElementById('experience-grid');
-            if (!grid) return;
+            const skeleton = document.getElementById('experience-skeleton');
+            const track = document.getElementById('experience-marquee-track');
+            if (!grid || !track) return;
 
             try {
                 const items = await fetchFromSupabase('experience', 'select=*&order=sort_order.asc');
 
                 if (!items || !items.length) {
-                    grid.innerHTML =
-                        `<p class="text-background font-mono col-span-3 text-center">No experience added yet.</p>`;
+                    skeleton.classList.add('hidden');
+                    grid.classList.remove('hidden');
+                    track.innerHTML =
+                        '<p class="text-on-surface-variant font-mono text-center">No experience added yet.</p>';
                     return;
                 }
 
-                grid.innerHTML = '';
-                items.forEach(item => {
-                    // Build premium badge card
-                    const card = document.createElement('div');
-                    card.className = 'cert-badge';
+                skeleton.classList.add('hidden');
+                grid.classList.remove('hidden');
 
-                    // Medal icon (SVG)
-                    const medalIcon = `
-                        <svg class="medal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 15v2m-6 4h12M12 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
-                            <path d="M12 3v2m6 4h2M4 9H2" />
-                        </svg>
-                    `;
+                function buildItems() {
+                    const fragment = document.createDocumentFragment();
+                    items.forEach(item => {
+                        const el = document.createElement('div');
+                        el.className = 'experience-item';
+                        const medalIcon =
+                            `<svg class="experience-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v2m-6 4h12M12 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" /><path d="M12 3v2m6 4h2M4 9H2" /></svg>`;
+                        const imageBlock = item.image_url ?
+                            `<img src="${item.image_url}" alt="${item.subtitle}" />` :
+                            medalIcon;
+                        el.innerHTML =
+                            `${imageBlock}<div class="experience-text"><div class="experience-title">${item.title}</div><div class="experience-subtitle">${item.subtitle}</div><div class="experience-date">${item.date_range}</div></div>`;
+                        fragment.appendChild(el);
+                    });
+                    return fragment;
+                }
 
-                    // Image if available, else use medal icon
-                    const imageBlock = item.image_url
-                        ? `<div class="w-16 h-16 rounded-full overflow-hidden ring-2 ring-primary/30 shadow-lg -mt-2">
-                               <img src="${item.image_url}" alt="${item.subtitle}" class="w-full h-full object-cover" />
-                           </div>`
-                        : medalIcon;
-
-                    card.innerHTML = `
-                            ${imageBlock}
-                            <div class="title">${item.title}</div>
-                            <div class="subtitle">${item.subtitle}</div>
-                            <div class="date">${item.date_range}</div>
-                        `;
-                    grid.appendChild(card);
-                });
-
-                // Add reveal classes to dynamically created cards
-                grid.querySelectorAll(':scope > div').forEach((el, i) => {
-                    el.classList.add('reveal', `reveal-delay-${(i % 3) + 1}`);
-                });
-                if (window.__reobserveReveal) window.__reobserveReveal();
+                track.innerHTML = '';
+                track.appendChild(buildItems());
+                track.appendChild(buildItems());
 
             } catch (err) {
                 console.warn('Experience fetch failed:', err);
-                grid.innerHTML =
-                    `<p class="text-background font-mono col-span-3 text-center">Failed to load experience.</p>`;
+                skeleton.classList.add('hidden');
+                grid.classList.remove('hidden');
+                track.innerHTML =
+                    `<p class="text-on-surface-variant font-mono text-center">Failed to load experience.</p>`;
             }
         })();
 

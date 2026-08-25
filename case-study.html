@@ -341,8 +341,7 @@
             transition: transform 0.3s ease, opacity 0.3s ease !important;
         }
 </style>
-<!-- Include Supabase config -->
-<script src="supabase-config.js"></script>
+<!-- ===== Supabase config is now loaded via ES module import, not a script tag ===== -->
 </head>
 <body class="bg-background text-on-surface font-body-md min-h-screen smooth-scroll relative overflow-x-hidden">
 
@@ -672,8 +671,10 @@
     })();
 </script>
 
-<!-- ===== Main JavaScript ===== -->
-<script>
+<!-- ===== Main JavaScript (now an ES Module) ===== -->
+<script type="module">
+    import { fetchFromSupabase } from './supabase-config.js';
+
         // ============================================================
         // Helper: Dynamic aspect-ratio based on image/video dimensions
         // ============================================================
